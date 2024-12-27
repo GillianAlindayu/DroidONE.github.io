@@ -1,0 +1,66 @@
+body {
+    background: url('starwars bg.jpg') no-repeat center center/cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #0a022b;
+    color: rgb(255, 234, 7);
+    padding: 1rem;
+    text-align: center;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+nav a:hover {
+    background-color: #ffd83e;
+}
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Hero class */
+.hero {
+    background-color: url('deathstar.jpg') no-repeat center center/cover; 
+    fill-opacity: initial;
+    color: white;
+    padding: 5rem 1rem;
+}
+footer {
+    background-color: #0b0814;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+    nav a {
+        padding: 0.5rem;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .hero h2 {
+        font-size: 1.25rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
