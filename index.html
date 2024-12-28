@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarWars FanWebpage</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* General Styles */
         body {
@@ -43,7 +44,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 1rem;
-            background-color: #111;
         }
 
         #menu-toggle {
@@ -75,7 +75,7 @@
         /* Hero Section */
         .hero {
             background: rgba(0, 0, 0, 0.7);
-            padding: 5rem 1rem;
+            padding: 10rem 1rem;
             margin-bottom: 2rem;
             text-align: center;
             color: #fff;
@@ -227,6 +227,9 @@
 
     <!--Section in each pages. -->
 
+
+    <!--Home pages.-->
+
     <section id="home" class="hero">
         <h2>"There Are No Emotion, There is Peace."</h2>
         <h3>"Choose your side</h3>
@@ -241,8 +244,17 @@
     </section>
 
     <section id="movies">
-        <h2>Movies</h2>
-        <p>Discover the iconic films and their stories, from "A New Hope" to "Revenge of the Sith."</p>
+        <div class="movies-page">
+            <h2>Movies</h2>
+            <p>Discover the iconic films and their stories, from "A New Hope" to "Revenge of the Sith."</p>
+        </div>
+        <style>
+            /* Add CSS styles for movies section */
+            movies-page{
+                background-color: darkblue !important;
+                margin-bottom: 10rem; 
+            }
+        </style>
     </section>
 
     <section id="characters">
@@ -253,16 +265,86 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>Reach out to us via email at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
-
-        <form id="contact-form" href="s">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <textarea id="message" name="message" placeholder="Your message"></textarea>
+    
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+            </div>
             <button type="submit">Submit</button>
         </form>
-        <div id="response-message"></div>
+        <div id="response-message" class="response-message"></div>
+        <style>
+            /* Form Styles */
+            .contact-form {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 1.5rem;
+                background-color: rgba(0, 0, 0, 0.8);
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+        
+            .form-group label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+        
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 0.75rem;
+                font-size: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #222;
+                color: #fff;
+            }
+        
+            .form-group input:focus,
+            .form-group textarea:focus {
+                border-color: #ffd83e;
+                outline: none;
+                box-shadow: 0 0 5px #ffd83e;
+            }
+        
+            .contact-form button {
+                display: block;
+                width: 100%;
+                padding: 0.75rem;
+                font-size: 1rem;
+                background-color: #ffd83e;
+                color: #000;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+        
+            .contact-form button:hover {
+                background-color: #000;
+                color: #ffd83e;
+            }
+        
+            .response-message {
+                margin-top: 1rem;
+                font-weight: bold;
+            }
+        </style>        
     </section>
 
     <footer>
@@ -272,41 +354,75 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+        
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                        });
+                    } else {
+                        console.error(`Element with ID "${targetId}" not found.`);
+                    }
                 });
             });
-        });
-
-        // Toggle menu for small screens
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('visible');
-        });
-        document.getElementById('contact-form').addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-            };
         
-            const response = await fetch('/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+            // Toggle menu for small screens
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+        
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('visible');
             });
         
-            const result = await response.json();
-            document.getElementById('response-message').innerText = result.message;
-        });
+            // Contact form submission with error handling
+            const contactForm = document.getElementById('contact-form');
+            const responseMessage = document.getElementById('response-message');
+        
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+        
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    message: document.getElementById('message').value.trim(),
+                };
+        
+                // Validate form fields
+                if (!formData.name || !formData.email || !formData.message) {
+                    responseMessage.innerText = "All fields are required!";
+                    responseMessage.style.color = "red";
+                    return;
+                }
+        
+                try {
+                    const response = await fetch('/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData),
+                    });
+        
+                    if (response.ok) {
+                        const result = await response.json();
+                        responseMessage.innerText = result.message || "Message sent successfully!";
+                        responseMessage.style.color = "green";
+                        contactForm.reset();
+                    } else {
+                        responseMessage.innerText = "Failed to send the message. Please try again.";
+                        responseMessage.style.color = "red";
+                    }
+                } catch (error) {
+                    console.error("Error submitting the form:", error);
+                    responseMessage.innerText = "An error occurred. Please try again later.";
+                    responseMessage.style.color = "red";
+                }
+            });
+        }); 
         
     </script>
 </body>
