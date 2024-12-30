@@ -223,6 +223,54 @@
                 <a href="#contact">Contact</a>
             </div>
         </nav>
+        <style>
+            header {
+                background-color: #0d0b19;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+            
+            body {
+                padding-top: 80px; /* Adjust based on header height */
+            }
+            
+        </style>
+        <script>
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('nav a');
+            
+                let currentSection = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 80; // Adjust for fixed header
+                    if (window.scrollY >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+            
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Add a CSS class for the active link
+            const style = document.createElement('style');
+            style.textContent = `
+                nav a.active {
+                    font-weight: bold;
+                    color: yellow;
+                    border-bottom: 2px solid yellow;
+                }
+            `;
+            document.head.append(style);
+            
+        </script>
     </header>
 
     <!--Section in each pages. -->
@@ -231,9 +279,15 @@
     <!--Home pages.-->
 
     <section id="home" class="hero">
-        <h2>"There Are No Emotion, There is Peace."</h2>
-        <h3>"Choose your side</h3>
-        <button id="sides">Start your journey</button>
+
+        <h2>"There Are No Emotion, There is Peace."</h2>      
+          <button id="sides">Start your journey</button> <!--button to navigate to next page-->
+          <div class="page-introduction">
+            <h3>Welcome to Star Wars!</h3>
+            <p>Discover the rich history and amazing stories of the galaxy's most iconic 
+                films and TV shows. Explore the characters, their backstories, and the events that shaped the galaxy.</p>
+  
+          </div>
     </section>
     <section id="about">
         <div class="about-page">
@@ -488,7 +542,10 @@
 
     <footer>
         <p>&copy; 2024 Star Wars Fan Page | Follow us on 
-            <a href="#">Twitter</a> | <a href="#">Instagram</a>
+            <a href="#">Twitter</a> |
+             <a href="#">Instagram</a>
+            <a href="#">Facebook</a> | <
+
         </p>
     </footer>
 
