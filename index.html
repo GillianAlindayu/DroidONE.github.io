@@ -369,18 +369,35 @@
             <p>Discover the iconic films and their stories, from "A New Hope" to "Revenge of the Sith."</p>
             <button id="toggle-movies">Show More</button>
             <div class="movies-content" id="movies-content">
-                <ul>
-                    <li>
-                        <img src="New Hope.jpg" alt="poster1" height="600" width="550"/>
-                        A New Hope (Episode IV)</li>
-                    <li>The Empire Strikes Back (Episode V)</li>
-                    <li>Return of the Jedi (Episode VI)</li>
-                    <li>The Phantom Menace (Episode I)</li>
-                    <li>Attack of the Clones (Episode II)</li>
-                    <li>Revenge of the Sith (Episode III)</li>
-                </ul>
+                <div class="movie-gallery">
+                    <div class="movie-item">
+                        <img src="New Hope.jpg" alt="A New Hope Poster" />
+                        <p>A New Hope (Episode IV)</p>
+                    </div>
+                    <div class="movie-item">
+                        <img src="Empire.jpeg" alt="The Empire Strikes Back Poster" />
+                        <p>The Empire Strikes Back (Episode V)</p>
+                    </div>
+                    <div class="movie-item">
+                        <img src="Return Of The Jedi.jpeg" alt="Return of the Jedi Poster" />
+                        <p>Return of the Jedi (Episode VI)</p>
+                    </div>
+                    <div class="movie-item">
+                        <img src="Phantom.jpeg" alt="The Phantom Menace Poster" />
+                        <p>The Phantom Menace (Episode I)</p>
+                    </div>
+                    <div class="movie-item">
+                        <img src="Attack of the clones.jpeg" alt="Attack of the Clones Poster" />
+                        <p>Attack of the Clones (Episode II)</p>
+                    </div>
+                    <div class="movie-item">
+                        <img src="Revenge.jpeg" alt="Revenge of the Sith Poster" />
+                        <p>Revenge of the Sith (Episode III)</p>
+                    </div>
+                </div>
             </div>
         </div>
+    
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -388,11 +405,11 @@
                 margin: 0;
                 padding: 20px;
             }
-            
+    
             #movies {
                 margin-top: 20px;
             }
-            
+    
             .movies-page {
                 background-color: rgb(0, 0, 0);
                 color: white;
@@ -400,25 +417,28 @@
                 border-radius: 8px;
                 text-align: center;
             }
-            
+    
             .movies-page h2 {
                 font-size: 2rem;
                 margin-bottom: 1rem;
+                animation: fadeIn 1s ease-in-out;
             }
-            
+    
             .movies-page p {
                 font-size: 1.2rem;
+                animation: fadeIn 1.5s ease-in-out;
             }
-            
+    
             .movies-content {
                 display: none; /* Initially hidden */
                 margin-top: 15px;
+                animation: slideDown 0.5s ease-in-out;
             }
-            
+    
             .movies-content.active {
                 display: block; /* Show when active */
             }
-            
+    
             button {
                 background-color: #dcbc18;
                 color: rgb(0, 0, 0);
@@ -427,19 +447,68 @@
                 padding: 10px 15px;
                 cursor: pointer;
                 margin-top: 10px;
+                transition: background-color 0.3s ease, color 0.3s ease;
             }
-            
+    
             button:hover {
                 background-color: #000000;
-                color: white; 
+                color: white;
+            }
+    
+            .movie-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+    
+            .movie-item {
+                text-align: center;
+            }
+    
+            .movie-item img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+            }
+    
+            .movie-item img:hover {
+                transform: scale(1.05);
+            }
+    
+            .movie-item p {
+                margin-top: 10px;
+                font-size: 1rem;
+            }
+    
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+    
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         </style>
+    
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const toggleMoviesButton = document.getElementById('toggle-movies');
                 const moviesContent = document.getElementById('movies-content');
-            
-                toggleMoviesButton.addEventListener('click', function() {
+    
+                toggleMoviesButton.addEventListener('click', function () {
                     moviesContent.classList.toggle('active');
                     if (moviesContent.classList.contains('active')) {
                         toggleMoviesButton.textContent = 'Show Less';
@@ -450,8 +519,7 @@
             });
         </script>
     </section>
-
-  
+    
 
     <section id="characters">
         <h2>Characters</h2>
