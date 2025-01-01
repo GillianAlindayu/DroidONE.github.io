@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarWars FanWebpage</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
         /* General Styles */
         body {
@@ -31,6 +32,7 @@
             color: rgb(255, 234, 7);
             text-align: center;
             padding: 1rem 0;
+            margin-bottom: 2px; 
         }
 
         header h1 {
@@ -296,7 +298,10 @@
                 <button id="toggle-content">Show More</button>
             </div>
             <div class="about-content" id="content">
-                <p>The Star Wars timeline is as vast as the galaxy. From movies to TV shows and video games, Star Wars depicts the adventures of characters "A long time ago in a galaxy far, far away," spanning multiple fictional eras.</p>
+                <p>The Star Wars saga is a cultural phenomenon that has captivated audiences since the release of the first film, "Star Wars: Episode IV - A New Hope," in 1977. Created by George Lucas, the franchise spans multiple movies, TV shows, books, and video games, all set in a galaxy far, far away.</p>
+                <p>The original trilogy, consisting of "A New Hope," "The Empire Strikes Back," and "Return of the Jedi," follows the journey of Luke Skywalker, Princess Leia, and Han Solo as they battle the evil Galactic Empire led by Darth Vader. The prequel trilogy, released between 1999 and 2005, explores the rise of Darth Vader and the fall of the Galactic Republic. The sequel trilogy, which began with "The Force Awakens" in 2015, continues the story with new characters like Rey, Finn, and Poe Dameron, while also bringing back beloved characters from the original trilogy.</p>
+                <p>In addition to the main saga, standalone films like "Rogue One" and "Solo" provide deeper insights into the Star Wars universe. The franchise also includes animated series such as "The Clone Wars" and "Rebels," which expand on the lore and introduce new characters and storylines.</p>
+                <p>Star Wars is known for its iconic characters, epic space battles, and the timeless struggle between the light and dark sides of the Force. It has inspired countless fans and has become a cornerstone of modern pop culture.</p>
             </div>
         </div>
         <style>
@@ -312,7 +317,7 @@
                 border-radius: 8px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 padding: 20px;
-                max-width: 600px;
+                max-width: 20000px;
                 margin: auto;
             }
             
@@ -327,6 +332,7 @@
             }
             
             .about-content {
+                
                 margin-top: 15px;
                 display: none; /* Initially hidden */
             }
@@ -348,21 +354,23 @@
                 background-color: #0056b3;
             }
         </style>
-        <script>document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.getElementById('toggle-content');
-            const content = document.getElementById('content');
-        
-            toggleButton.addEventListener('click', function() {
-                content.classList.toggle('active');
-                if (content.classList.contains('active')) {
-                    toggleButton.textContent = 'Show Less';
-                } else {
-                    toggleButton.textContent = 'Show More';
-                }
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleButton = document.getElementById('toggle-content');
+                const content = document.getElementById('content');
+            
+                toggleButton.addEventListener('click', function() {
+                    content.classList.toggle('active');
+                    if (content.classList.contains('active')) {
+                        toggleButton.textContent = 'Show Less';
+                    } else {
+                        toggleButton.textContent = 'Show More';
+                    }
+                });
             });
-        });
         </script>
     </section>
+  
     <section id="movies">
         <div class="movies-page">
             <h2>Movies</h2>
@@ -411,7 +419,7 @@
             }
     
             .movies-page {
-                background-color: #000;
+                background: url('star wars div.jpg') no-repeat center center/cover;
                 color: white;
                 padding: 20px;
                 border-radius: 8px;
@@ -521,20 +529,96 @@
             });
         </script>
     </section>
-    
-  
-    
-  
-    
-
     <section id="characters">
-        <div class="starwars characters">
+        <div class="starwars-characters">
             <h2>Characters</h2>
             <p>Discover the most popular characters from Star Wars, including Leia Organa, Darth Vader, and Han Solo.</p>
             <button id="toggle-characters">Show More</button>
+            <div id="more-characters" class="hidden">
+               <div class="characters list">
+                 <div class="character">
+                    <img src="leia.jpg" alt="Leia Organa Poster" />
+                    <h3>Leia Organa</h3>
+                    <p>Leia Organa is a Jedi Knight who is the daughter of Luke Skywalker and Leia Starlighter. She is a former Jedi and a former member of the Rebel Alliance. She is known for her strong will, determination, and unwavering loyalty to her people.</p>
+     
+               </div>
+            </div>
         </div>
+    
+        <style>
+            /* Section styling */
+            #characters {
+                background: url('Characters.jpg') no-repeat center center;
+                background-size: cover;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            /* Heading styling */
+            .starwars-characters h2 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+                color: #ffd700; /* Gold color for Star Wars theme */
+            }
+    
+            /* Paragraph styling */
+            .starwars-characters p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+            }
+    
+            /* Button styling */
+            #toggle-characters {
+                background-color: #ffd700;
+                color: #000;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+    
+            #toggle-characters:hover {
+                background-color: #ffcc00;
+                transform: scale(1.05);
+            }
+    
+            /* Hidden content styling */
+            .hidden {
+                display: none;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+    
+            .show {
+                display: block;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+        </style>
+    
+        <script>
+            document.getElementById('toggle-characters').addEventListener('click', function () {
+                const moreCharacters = document.getElementById('more-characters');
+                const button = this;
+    
+                if (moreCharacters.classList.contains('hidden')) {
+                    moreCharacters.classList.remove('hidden');
+                    moreCharacters.classList.add('show');
+                    button.textContent = 'Show Less';
+                } else {
+                    moreCharacters.classList.remove('show');
+                    setTimeout(() => {
+                        moreCharacters.classList.add('hidden');
+                    }, 500); // Matches the transition duration
+                    button.textContent = 'Show More';
+                }
+            });
+        </script>
     </section>
-
+    
+ 
     <section id="contact">
         <h2>Contact</h2>
         <p>Reach out to us via email at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
