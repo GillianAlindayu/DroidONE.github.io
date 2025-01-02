@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+    <style>
+        /* General Styles */
+        body {
+            background: url('Characters.jpg') no-repeat center center/cover fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            padding-top: 80px; /* Adjusted for fixed header */
+        }
+
+        a {
+            color: #ffeb0c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+        }
+
+        /* Header Styles */
+        header {
+            background: url('Death star.jpg') no-repeat center center/cover;
+            color: rgb(255, 234, 7);
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        /* Navigation Styles */
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav button {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        #nav-links a {
+            font-size: 1rem;
+        }
+
+        /* Section styling */
+        #characters {
+            background: url('Characters.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Heading styling */
+        .starwars-characters h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        /* Paragraph styling */
+        .starwars-characters p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Horizontal scroll styling */
+        .characters-list {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
+
+        .character-item {
+            min-width: 250px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        /* Character images */
+        .character-image img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .character-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .character-item p {
+            font-size: 1em;
+        }
+
+        /* Animation for when characters appear */
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo2-removebg-preview.png" alt="Star Wars Logo">
+        </a>
+        <nav>
+            <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <div id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#movies">Movies</a>
+                <a href="#characters">Characters</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="characters">
+        <div class="starwars-characters">
+            <h2>Characters</h2>
+            <p>Discover the most popular characters from Star Wars, including Leia Organa, Darth Vader, and Han Solo.</p>
+            <div class="characters-list">
+                <div class="character-item">
+                    <div class="character-image">
+                        <img src="Anakin.jpg" alt="Anakin Skywalker">
+                    </div>
+                    <h3>Anakin Skywalker</h3>
+                    <p>Discovered as a slave on Tatooine by Qui-Gon Jinn and Obi-Wan Kenobi, Anakin Skywalker had the potential to become one of the most powerful Jedi ever.</p>
+                </div>
+                <div class="character-item">
+                    <div class="character-image">
+                        <img src="obiwan.jpg" alt="Obi-Wan Kenobi">
+                    </div>
+                    <h3>Obi-Wan Kenobi</h3>
+                    <p>A legendary Jedi Master, Obi-Wan Kenobi was a noble man and gifted in the ways of the Force.</p>
+                </div>
+                <div class="character-item">
+                    <div class="character-image">
+                        <img src="Luke Skywalker.jpg" alt="Luke Skywalker">
+                    </div>
+                    <h3>Luke Skywalker</h3>
+                    <p>Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known.</p>
+                </div>
+                <div class="character-item">
+                    <div class="character-image">
+                        <img src="yoda.jpg" alt="Master Yoda">
+                    </div>
+                    <h3>Master Yoda</h3>
+                    <p>Yoda was a legendary Jedi Master and stronger than most in his connection with the Force. Small in size but wise and powerful, he trained Jedi for over 800 years, playing integral roles in the Clone Wars, the instruction of Luke Skywalker, and unlocking the path to immortality.</p>
+                </div>
+                <div class="character-item">
+                    <div class="character-image">
+                        <img src="HansSolo.jpg" alt="Han Solo">
+                    </div>
+                    <h3>Han Solo</h3>
+                    <p>Han Solo rose from an impoverished childhood on the mean streets of Corellia to become one of the heroes of the Rebel Alliance. As captain of the Millennium Falcon, Han and his co-pilot Chewbacca came to believe in the cause of galactic freedom, joining Luke Skywalker and Princess Leia Organa in the fight against the Empire. After the Battle of Endor, Han faced difficult times in a chaotic galaxy, leading to a shattering confrontation with his estranged son Ben.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to add animation when characters come into view
+        const characterItems = document.querySelectorAll('.character-item');
+
+        const options = {
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        characterItems.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>

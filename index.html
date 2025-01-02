@@ -9,7 +9,7 @@
     <style>
         /* General Styles */
         body {
-            background: url('starwars bg.jpg') no-repeat center center/cover;
+            background: url('starwars bg.jpg') no-repeat center center/cover fixed;
             margin: 0;
             font-family: Arial, sans-serif;
             color: #ffffff;
@@ -28,7 +28,7 @@
 
         /* Header */
         header {
-            background: url('Death\ star.jpg') no-repeat center center/cover;
+            background: url('Death\ star.jpg') no-repeat center center/cover fixed;
             color: rgb(255, 234, 7);
             text-align: center;
             padding: 1rem 0;
@@ -227,7 +227,7 @@
         </nav>
         <style>
             header {
-                background: url('Death\ star.jpg') no-repeat center center/cover;
+                background: url('Death\ star.jpg') no-repeat center center/cover ;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -424,7 +424,7 @@
             }
     
             .movies-page {
-                background: url('star wars div.jpg') no-repeat center center/cover;
+                background: url('star wars div.jpg') no-repeat center center/cover fixed;
                 color: white;
                 padding: 20px;
                 border-radius: 8px;
@@ -445,6 +445,7 @@
             .movies-content {
                 display: none;
                 margin-top: 15px;
+                margin-bottom: 20px;
                 animation: slideDown 0.5s ease-in-out;
             }
     
@@ -554,27 +555,39 @@
             <p>Discover the most popular characters from Star Wars, including Leia Organa, Darth Vader, and Han Solo.</p>
             <button id="toggle-characters">Show More</button>
             <div id="more-characters" class="hidden">
-               <div class="characters list">
-                 <div class="character">
+                <div class="characters-list">
                     <div class="character-item">
-                        <img src="Anakin.jpg" alt="anakin" />
-                        <h3>Anakin skywalker</h3>
-                        <p>Discovered as a slave on Tatooine by Qui-Gon Jinn and Obi-Wan Kenobi, Anakin Skywalker had the potential to become one of the most powerful Jedi ever, and was believed by some to be the prophesied Chosen 
-                            One who would bring balance to the Force.</p>
-                   </div>
-                   <div class="Character-item">
-                    <img src="obiwan.jpg" alt="obiwan" />
-                    <h3>Obi-Wan Kenobi</h3>
-                    <p>A legendary Jedi Master, Obi-Wan Kenobi was a noble man and gifted in the ways of the Force. He trained Anakin Skywalker, served as a general in the Republic Army during the Clone Wars, and guided Luke Skywalker as a mentor.</p>
-                   </div>
-
-                        
+                        <div class="character-image">
+                            <img src="Anakin.jpg" alt="Anakin Skywalker" />
+                        </div>
+                        <h3>Anakin Skywalker</h3>
+                        <p>Discovered as a slave on Tatooine by Qui-Gon Jinn and Obi-Wan Kenobi, Anakin Skywalker had the potential to become one of the most powerful Jedi ever.</p>
+                    </div>
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="obiwan.jpg" alt="Obi-Wan Kenobi" />
+                        </div>
+                        <h3>Obi-Wan Kenobi</h3>
+                        <p>A legendary Jedi Master, Obi-Wan Kenobi was a noble man and gifted in the ways of the Force.</p>
+                    </div>
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="Luke Skywalker.jpg" alt="Luke Skywalker" />
+                        </div>
+                        <h3>Luke Skywalker</h3>
+                        <p>Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known.</p>
+                    </div>
+                </div>
+                <div class="button">
+                    <button><a href="characters.html">View All Characters</a></button>
+                </div>
+            </div>
         </div>
     
         <style>
             /* Section styling */
             #characters {
-                background: url('Characters.jpg') no-repeat center center;
+                background: url('Characters.jpg') no-repeat center center fixed;
                 background-size: cover;
                 color: #fff;
                 padding: 20px;
@@ -585,7 +598,7 @@
             .starwars-characters h2 {
                 font-size: 2.5em;
                 margin-bottom: 10px;
-                color: #ffd700; /* Gold color for Star Wars theme */
+                color: #ffd700;
             }
     
             /* Paragraph styling */
@@ -610,17 +623,65 @@
                 transform: scale(1.05);
             }
     
-            /* Hidden content styling */
+            /* Hidden content styling with animations */
             .hidden {
                 display: none;
                 opacity: 0;
-                transition: opacity 0.5s ease;
+                transform: translateY(-20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
             }
     
             .show {
                 display: block;
                 opacity: 1;
-                transition: opacity 0.5s ease;
+                transform: translateY(0);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+    
+            /* Horizontal scroll styling */
+            .characters-list {
+                display: flex;
+                gap: 20px;
+                overflow-x: auto;
+                padding: 10px 0;
+                scroll-behavior: smooth;
+            }
+    
+            .character-item {
+                min-width: 250px;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                color: #fff;
+                animation: fadeIn 1s ease;
+            }
+    
+            .character-image img {
+                width: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+    
+            .character-item h3 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+    
+            .character-item p {
+                font-size: 1em;
+            }
+    
+            /* Keyframe animations */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
         </style>
     
@@ -643,8 +704,6 @@
             });
         </script>
     </section>
-    
- 
     <section id="contact">
         <h2>Contact</h2>
         <p>Reach out to us via email at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
