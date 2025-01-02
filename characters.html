@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Characters</title>
+    <title>Star Wars Characters Album</title>
     <style>
         /* General Styles */
         body {
@@ -39,17 +39,11 @@
             z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
         header img {
             max-width: 150px;
             height: auto;
         }
 
-        /* Navigation Styles */
         nav {
             margin-top: 1rem;
         }
@@ -73,69 +67,60 @@
             font-size: 1rem;
         }
 
-        /* Section styling */
+        /* Section Styling */
         #characters {
-            background: url('Characters.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px 20px;
             text-align: center;
         }
 
-        /* Heading styling */
-        .starwars-characters h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-
-        /* Paragraph styling */
-        .starwars-characters p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        /* Horizontal scroll styling */
+        /* Album Grid */
         .characters-list {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            overflow-x: auto;
-            padding: 10px 0;
-            scroll-behavior: smooth;
+            margin-top: 20px;
         }
 
+        /* Character Card */
         .character-item {
-            min-width: 250px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 10px;
             text-align: center;
             color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(30px);
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s, transform 1s;
+            transition: transform 0.6s ease, opacity 0.6s ease;
         }
 
-        /* Character images */
+        .character-item.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
         .character-image img {
             width: 100%;
             border-radius: 10px;
             object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .character-item:hover .character-image img {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .character-item h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.3em;
+            margin: 10px 0;
+            color: #ffd700;
         }
 
         .character-item p {
             font-size: 1em;
-        }
-
-        /* Animation for when characters appear */
-        .show {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -158,56 +143,65 @@
     </header>
 
     <section id="characters">
-        <div class="starwars-characters">
-            <h2>Characters</h2>
-            <p>Discover the most popular characters from Star Wars, including Leia Organa, Darth Vader, and Han Solo.</p>
-            <div class="characters-list">
-                <div class="character-item">
-                    <div class="character-image">
-                        <img src="Anakin.jpg" alt="Anakin Skywalker">
-                    </div>
-                    <h3>Anakin Skywalker</h3>
-                    <p>Discovered as a slave on Tatooine by Qui-Gon Jinn and Obi-Wan Kenobi, Anakin Skywalker had the potential to become one of the most powerful Jedi ever.</p>
+        <h2>Star Wars Characters Album</h2>
+        <p>Discover the most popular characters from Star Wars, presented in an interactive album format.</p>
+        <div class="characters-list">
+            <!-- Character Cards -->
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="Anakin.jpg" alt="Anakin Skywalker">
                 </div>
-                <div class="character-item">
-                    <div class="character-image">
-                        <img src="obiwan.jpg" alt="Obi-Wan Kenobi">
-                    </div>
-                    <h3>Obi-Wan Kenobi</h3>
-                    <p>A legendary Jedi Master, Obi-Wan Kenobi was a noble man and gifted in the ways of the Force.</p>
+                <h3>Anakin Skywalker</h3>
+                <p>Anakin Skywalker had the potential to become one of the most powerful Jedi ever.</p>
+            </div>
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="obiwan.jpg" alt="Obi-Wan Kenobi">
                 </div>
-                <div class="character-item">
-                    <div class="character-image">
-                        <img src="Luke Skywalker.jpg" alt="Luke Skywalker">
-                    </div>
-                    <h3>Luke Skywalker</h3>
-                    <p>Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known.</p>
+                <h3>Obi-Wan Kenobi</h3>
+                <p>A legendary Jedi Master, Obi-Wan was noble and skilled in the ways of the Force.</p>
+            </div>
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="Luke Skywalker.jpg" alt="Luke Skywalker">
                 </div>
-                <div class="character-item">
-                    <div class="character-image">
-                        <img src="yoda.jpg" alt="Master Yoda">
-                    </div>
-                    <h3>Master Yoda</h3>
-                    <p>Yoda was a legendary Jedi Master and stronger than most in his connection with the Force. Small in size but wise and powerful, he trained Jedi for over 800 years, playing integral roles in the Clone Wars, the instruction of Luke Skywalker, and unlocking the path to immortality.</p>
+                <h3>Luke Skywalker</h3>
+                <p>Luke rose from humble beginnings to become one of the greatest Jedi.</p>
+            </div>
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="yoda.jpg" alt="Master Yoda">
                 </div>
-                <div class="character-item">
-                    <div class="character-image">
-                        <img src="HansSolo.jpg" alt="Han Solo">
-                    </div>
-                    <h3>Han Solo</h3>
-                    <p>Han Solo rose from an impoverished childhood on the mean streets of Corellia to become one of the heroes of the Rebel Alliance. As captain of the Millennium Falcon, Han and his co-pilot Chewbacca came to believe in the cause of galactic freedom, joining Luke Skywalker and Princess Leia Organa in the fight against the Empire. After the Battle of Endor, Han faced difficult times in a chaotic galaxy, leading to a shattering confrontation with his estranged son Ben.</p>
+                <h3>Master Yoda</h3>
+                <p>Yoda was a wise and powerful Jedi Master who trained Jedi for over 800 years.</p>
+            </div>
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="HansSolo.jpg" alt="Han Solo">
                 </div>
+                <h3>Han Solo</h3>
+                <p>Han was a smuggler-turned-hero who fought for the Rebel Alliance.</p>
+            </div>
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="leia.jpg" alt="Leia Organa">
+                </div>
+                <h3>Leia Organa</h3>
+                <p>Leia was a leader of the Rebel Alliance and a symbol of hope for the galaxy.</p>
+            </div>
+            <div class="character-item">
+                <div class="character-image">
+                    <img src="Darth Vader.jpg" alt="Darth Vader">
+                </div>
+                <h3>Darth Vader</h3>
+                <p>Once a Jedi, Darth Vader became one of the most feared Sith Lords in history.</p>
             </div>
         </div>
     </section>
 
     <script>
-        // JavaScript to add animation when characters come into view
+        // Intersection Observer for animations
         const characterItems = document.querySelectorAll('.character-item');
-
-        const options = {
-            threshold: 0.5 // Trigger when 50% of the element is visible
-        };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -216,11 +210,9 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, options);
+        }, { threshold: 0.3 });
 
-        characterItems.forEach(item => {
-            observer.observe(item);
-        });
+        characterItems.forEach(item => observer.observe(item));
     </script>
 </body>
 
