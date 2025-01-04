@@ -409,6 +409,17 @@
               </p>
               <button>Learn more</button>
             </div>
+      
+            <div class="news-article">
+              <img src="skeletoncrew.jpeg" alt="Skeleton Crew" />
+              <h4>The Inside Story of Star Wars: Skeleton Crew’s Creature Effects</h4>
+              <p>
+                Star Wars: Skeleton Crew, which recently debuted on Disney+, introduces a slew of brand-new characters who have already earned legions of fans.
+                (Neel Nation, we see you.) “For Skeleton Crew there were more characters than we’ve built on any other season before,” says Legacy Effects co-founder J. Alan Scott, whose company fabricated Grogu for The Mandalorian and brought Professor Huyang and 
+                Murley the Loth-cat to life for Ahsoka among others. For the latest series, Legacy Effects once again made a mix of never-before-seen creatures and droids crafted by Doug Chiang and his production design team, like Neel and the unforgettable Kh’ymm, as well as more familiar aliens first glimpsed in other much-loved Star Wars stories.
+              </p>
+              <button>Learn more</button>
+            </div>
           </div>
         </div>
       
@@ -492,6 +503,7 @@
                     <img src="${news.image}" alt="${news.title}" />
                     <h4>${news.title}</h4>
                     <p>${news.description}</p>
+                    <button>Learn more</button>
                   `;
                   newsContainer.appendChild(newsItem);
                 });
@@ -500,9 +512,112 @@
           });
         </script>
       </section>
-      
-   
-      
+      <section id="collections and Fan Arts">
+        <div class="fan-articles">
+            <h4>Othe Collections and Fan arts</h4>
+        </div>
+      </section>
+      <section id="Comics">
+        <div class="comic-section">
+            <h2>Comics</h2>
+            <p>Discover the latest comic strips, from "Star Wars: The Force Awakens" to "The Dark Side of the Force."</p>
+            <div class="comic-collections">
+                <div class="comic-item">
+                    <img src="comic1.jpg" alt="Comic 1" class="comic-image">
+                    <h3 class="comic-title">Comic Title 1</h3>
+                    <button class="read-more">Read More</button>
+                </div>
+                <div class="comic-item">
+                    <img src="comic2.jpg" alt="Comic 2" class="comic-image">
+                    <h3 class="comic-title">Comic Title 2</h3>
+                    <button class="read-more">Read More</button>
+                </div>
+                <!-- Add more comic items as needed -->
+            </div>
+        </div>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #000000;
+            }
+            
+            .comic-section {
+                padding: 20px;
+                background-color: #000000;
+                border-radius: 8px;
+                margin: 20px auto;
+                max-width: 800px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            .comic-section h2 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+            
+            .comic-section p {
+                font-size: 16px;
+                color: #666;
+            }
+            
+            .comic-collections {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            
+            .comic-item {
+                background-color: #f4f4f4;
+                border-radius: 8px;
+                padding: 10px;
+                text-align: center;
+                flex: 1 1 calc(50% - 20px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .comic-image {
+                max-width: 100%;
+                border-radius: 4px;
+            }
+            
+            .comic-title {
+                font-size: 18px;
+                margin: 10px 0;
+                color: #333;
+            }
+            
+            .read-more {
+                background-color: #47ffff;
+                color: #000000;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+            
+            .read-more:hover {
+                background-color: #0056b3;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.read-more');
+                
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        alert('Feature coming soon!');
+                    });
+                });
+            });
+        </script>
+          
+    </section>
+ 
   
     <section id="movies">
         <div class="movies-page">
