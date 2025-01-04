@@ -220,6 +220,7 @@
             <div id="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#news">News & Updates</a>
                 <a href="#movies">Movies</a>
                 <a href="#characters">Characters</a>
                 <a href="#Shop">Shop</a>
@@ -305,6 +306,7 @@
                 <p>Star Wars is known for its iconic characters, epic space battles, and the timeless struggle between the light and dark sides of the Force. It has inspired countless fans and has become a cornerstone of modern pop culture.</p>
             </div>
         </div>
+        
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -371,6 +373,136 @@
             });
         </script>
     </section>
+    <section id="news">
+        <div class="news-page">
+          <h3 class="news-title">Star Wars News and Updates</h3>
+          <div class="news-container">
+            <!-- Static news articles -->
+            <div class="news-article">
+              <img src="Star wars vision.jpeg" alt="Star Wars Vision Volume 3" />
+              <h4>Star Wars Vision Returns with Volume 3 in 2025</h4>
+              <p>
+                At the 2024 Disney APAC Content Showcase, it was exclusively revealed that 
+                Star Wars: Visions will debut a third volume in 2025.
+              </p>
+              <p>
+                The award-winning series first premiered in 2021, with nine shorts by seven 
+                different Japanese anime studios celebrating the mythology of Star Wars through 
+                unique cultural perspectives. Last year’s second volume took the imaginative 
+                series on a global tour, featuring animation from across Japan, India, the 
+                United Kingdom, Ireland, Spain, Chile, France, South Africa, South Korea, and 
+                the United States.
+              </p>
+              <button>Learn more</button>
+            </div>
+      
+            <div class="news-article">
+              <img src="newsposter2.jpeg" alt="Star Wars Celebration Japan Badge Art" />
+              <h4>New Star Wars Celebration Japan 2025 Badge Art - Updated</h4>
+              <p>
+                Star Wars Celebration badges have provided a distinct opportunity to present 
+                a broad range of Star Wars characters with a unique artistic vision, a tradition 
+                stretching back to the first Celebration in 1999. While the badges are, of course, 
+                necessary to enter Star Wars Celebration’s doors, they often become prized keepsakes 
+                long after the excitement of new friends, rare moments, and first reveals have 
+                receded into memory.
+              </p>
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+      
+        <style>
+          #news {
+            background: black url('star-wars-background.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            font-family: 'Star Jedi', sans-serif;
+          }
+      
+          .news-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: glow 2s infinite alternate;
+          }
+      
+          @keyframes glow {
+            from {
+              text-shadow: 0 0 10px yellow, 0 0 20px gold;
+            }
+            to {
+              text-shadow: 0 0 20px gold, 0 0 40px yellow;
+            }
+          }
+      
+          .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+          }
+      
+          .news-article {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid gold;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+          }
+      
+          .news-article:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px gold;
+          }
+      
+          .news-article img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+          }
+      
+          .news-article h4 {
+            font-size: 1.5rem;
+            color: yellow;
+            margin-bottom: 10px;
+          }
+      
+          .news-article p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.5;
+          }
+        </style>
+      
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const newsContainer = document.querySelector('.news-container');
+      
+            // Fetch news data dynamically from the backend
+            fetch('/api/news')
+              .then(response => response.json())
+              .then(newsData => {
+                newsData.forEach(news => {
+                  const newsItem = document.createElement('div');
+                  newsItem.className = 'news-article';
+                  newsItem.innerHTML = `
+                    <img src="${news.image}" alt="${news.title}" />
+                    <h4>${news.title}</h4>
+                    <p>${news.description}</p>
+                  `;
+                  newsContainer.appendChild(newsItem);
+                });
+              })
+              .catch(error => console.error('Error fetching news:', error));
+          });
+        </script>
+      </section>
+      
+   
+      
   
     <section id="movies">
         <div class="movies-page">
@@ -467,7 +599,7 @@
                 padding: 15px;
                 text-align: center;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
+            }   
     
             .movie-item img {
                 width: 100%;
@@ -705,94 +837,155 @@
             });
         </script>
     </section>
-    <section id="Shop">
-        <h2>Contact</h2>
-        <p>Reach out to us via email at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
-    
-        <form id="contact-form" class="contact-form">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="response-message" class="response-message"> </div>
-        <style>
-            /* Form Styles */
-            .contact-form {
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 1.5rem;
-                background-color: rgba(0, 0, 0, 0.8);
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            }
-        
-            .form-group {
-                margin-bottom: 1.5rem;
-            }
-        
-            .form-group label {
-                display: block;
-                font-weight: bold;
-                margin-bottom: 0.5rem;
-            }
-        
-            .form-group input,
-            .form-group textarea {
-                width: 100%;
-                padding: 0.75rem;
-                font-size: 1rem;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                background-color: #222;
-                color: #fff;
-            }
-        
-            .form-group input:focus,
-            .form-group textarea:focus {
-                border-color: #ffd83e;
-                outline: none;
-                box-shadow: 0 0 5px #ffd83e;
-            }
-        
-            .contact-form button {
-                display: block;
-                width: 100%;
-                padding: 0.75rem;
-                font-size: 1rem;
-                background-color: #ffd83e;
-                color: #000;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-weight: bold;
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-        
-            .contact-form button:hover {
-                background-color: #000;
-                color: #ffd83e;
-            }
-        
-            .response-message {
-                margin-top: 1rem;
-                font-weight: bold;
-            }
-        </style>        
-    </section>
     <section id="Shops">
+        <link rel="script" href="server.js" type="text/javascript">
         <h2>Shop</h2>
         <p>Visit our store to purchase our favorite Star Wars-themed items.</p>
-    </section>
+        <div id="shop-items">
+          <div class="shop-item">
+            <h3>Coffee Table</h3>
+            <img src="Table.jpeg" alt="Coffee Table" />
+            <p>A stylish coffee table made from durable wood.</p>
+            <button>Buy Now</button>
+          </div>
+          <div class="shop-item">
+            <h3>Star Wars Mug</h3>
+            <img src="mug2.jpg" alt="Star Wars Mug" />
+            <p>A unique Star Wars-themed mug.</p>
+            <button>Buy Now</button>
+          </div>
+          <div class="shop-item">
+            <h3>Vader's Watch</h3>
+            <img src="Darth Vader watch.jpg" alt="Star Wars watch" />
+            <p>Vader's Watch</p>
+            <p>$30</p>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="more-items">
+          <button>
+            <h2>More Items...</h2>
+          </button>
+        </div>
+      
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+          }
+      
+          #Shops {
+            text-align: center;
+            padding: 50px 20px;
+          }
+      
+          #Shops h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+          }
+      
+          #shop-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+          }
+      
+          .shop-item {
+            background: #222;
+            border: 2px solid #444;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s;
+          }
+      
+          .shop-item:hover {
+            transform: scale(1.05);
+          }
+      
+          .shop-item img {
+            max-width: 100%;
+            border-radius: 5px;
+          }
+      
+          .shop-item h3 {
+            font-size: 18px;
+            color: #ffcc00;
+            margin: 10px 0;
+          }
+      
+          .shop-item p {
+            font-size: 14px;
+            margin: 5px 0;
+          }
+      
+          .shop-item button {
+            padding: 10px;
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+      
+          .shop-item button:hover {
+            background: #000000;
+            
+          }
+      
+          .more-items {
+            margin-top: 20px;
+          }
+      
+          .more-items button {
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+      
+          .more-items button:hover {
+            background: #000000;
+          }
+        </style>
+      
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const shopItemsContainer = document.getElementById("shop-items");
+      
+            // Fetch items from the backend
+            fetch('/api/shop-items')
+              .then(response => response.json())
+              .then(data => {
+                data.forEach(item => {
+                  const itemElement = document.createElement("div");
+                  itemElement.className = "shop-item";
+                  itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p>Price: $${item.price}</p>
+                    <button onclick="alert('Added ${item.name} to cart!')">Add to Cart</button>
+                  `;
+                  shopItemsContainer.appendChild(itemElement);
+                });
+              })
+              .catch(err => console.error("Failed to fetch shop items", err));
+          });
+        </script>
+      </section>
+      
+      
+
+  
 
     <footer>
         <p>&copy; 2024 Star Wars Fan Page | Follow us on 
