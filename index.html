@@ -373,6 +373,36 @@
             });
         </script>
     </section>
+    <section id="lore">
+        <div class="lore-content">
+            <h2>Our Lore</h2>
+            <p>Star Wars lore is a complex and diverse tapestry of stories, each telling a different story about the Star Wars universe. The lore has been told through various media, 
+                including books, films, comic books, and video games. 
+                Below are some key points about the Star Wars lore:</p>
+    
+                <div class="side-jedi">
+                    <h3>Jedi</h3>
+    
+                    <ul>
+                        <li>The Jedi Order was established by the Galactic Empire, led by Darth Vader, in 1977.</li>
+                        <li>The Jedi Master was the highest rank within the Jedi Order, and they were responsible for guiding the galaxy.</li>
+                        <li>The Jedi Order was divided into three branches: the Sith, the Emperor's Order, and the Dark Side.</li>
+                        <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
+                    </ul>
+    
+                </div>
+                <div class="side-dark-side">
+                    <h3>Dark Side </h3>
+                    <ul>
+                        <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
+                        <li>The Dark Side was created by the Sith, led by Darth Sidious, in 1977.</li>
+                        <li>The Dark Side was a powerful force that was used to manipulate and control the Force, but it also brought about chaos and destruction.</li>
+                        <li>The Dark Side was divided into two main branches: the Force Awakens and the Rebellion.</li>
+                    </ul>
+                    </div>
+        </div>
+    
+    </section>
     <section id="news">
         <div class="news-page">
           <h3 class="news-title">Star Wars News and Updates</h3>
@@ -835,7 +865,7 @@
             @keyframes slideDown {
                 from {
                     opacity: 0;
-                    transform: translateY(-20px);
+                    transform: translateY(-30px);
                 }
                 to {
                     opacity: 1;
@@ -1156,19 +1186,55 @@
           });
         </script>
       </section>
+
+      <footer>
+        <p>&copy; 2024 Star Wars Fan Page | Follow us on 
+            <img src="logo.png" alt="Star Wars Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Facebook</a>
+        </p>
+        <style>
+            footer {
+                background: url('footerbg.jpg') no-repeat center center ;
+                background-size: cover;
+                color: #fff;
+                padding: 200px;
+                text-align: center;
+                margin-bottom: 200px;
+                overflow: hidden;
+            }
+    
+            footer p {
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                margin: 0;
+            }
+    
+            footer a {
+                color: #ffd700; /* Gold color for links */
+                text-decoration: none;
+                margin: 0 5px;
+            }
+    
+            footer a:hover {
+                text-decoration: underline;
+            }
+        </style>
+      
+        <!--Put script-->   
+            <script>
+                const yearSpan = document.getElementById('year');
+                yearSpan.textContent = new Date().getFullYear();
+
+        </script>
+    </footer>
+    
       
       
 
   
 
-    <footer>
-        <p>&copy; 2024 Star Wars Fan Page | Follow us on 
-            <a href="#">Twitter</a> |
-             <a href="#">Instagram</a> |
-            <a href="#">Facebook</a> | <
-
-        </p>
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
