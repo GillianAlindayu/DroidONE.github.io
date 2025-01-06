@@ -401,6 +401,110 @@
                     </ul>
                     </div>
         </div>
+        <style>
+            #lore {
+                background-color: #1a1a1a;
+                color: #f5f5f5;
+                font-family: 'Arial', sans-serif;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px auto;
+                max-width: 800px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            
+            /* Lore Content */
+            .lore-content {
+                text-align: center;
+            }
+            
+            .lore-content h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+                color: #ffd700;
+            }
+            
+            /* Jedi and Dark Side sections */
+            .side-jedi, .side-dark-side {
+                margin: 20px 0;
+                padding: 15px;
+                background-color: #2e2e2e;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            }
+            
+            .side-jedi h3, .side-dark-side h3 {
+                font-size: 1.5em;
+                color: #87cefa;
+                text-align: left;
+                border-bottom: 2px solid #87cefa;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+            }
+            
+            .side-jedi ul, .side-dark-side ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .side-jedi li, .side-dark-side li {
+                text-align: left;
+                margin: 10px 0;
+                padding-left: 20px;
+                position: relative;
+            }
+            
+            .side-jedi li::before, .side-dark-side li::before {
+                content: "•";
+                color: #ffd700;
+                position: absolute;
+                left: 0;
+            }
+            
+            /* Add hover effects */
+            .side-jedi:hover, .side-dark-side:hover {
+                background-color: #383838;
+                transform: translateY(-3px);
+                transition: all 0.3s ease-in-out;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Select all sections with class "side-jedi" and "side-dark-side"
+                const sections = document.querySelectorAll(".side-jedi, .side-dark-side");
+            
+                sections.forEach(section => {
+                    // Add a button for toggling visibility
+                    const toggleButton = document.createElement("button");
+                    toggleButton.textContent = "Expand";
+                    toggleButton.style.marginTop = "10px";
+                    toggleButton.style.cursor = "pointer";
+                    toggleButton.style.backgroundColor = "#444";
+                    toggleButton.style.color = "#fff";
+                    toggleButton.style.border = "none";
+                    toggleButton.style.padding = "5px 10px";
+                    toggleButton.style.borderRadius = "5px";
+                    
+                    section.appendChild(toggleButton);
+            
+                    // Add click event for toggling content visibility
+                    const list = section.querySelector("ul");
+                    toggleButton.addEventListener("click", function () {
+                        if (list.style.display === "none" || !list.style.display) {
+                            list.style.display = "block";
+                            toggleButton.textContent = "Collapse";
+                        } else {
+                            list.style.display = "none";
+                            toggleButton.textContent = "Expand";
+                        }
+                    });
+            
+                    // Start with content collapsed
+                    list.style.display = "none";
+                });
+            });
+            
+        </script>
     
     </section>
     <section id="news">
@@ -589,7 +693,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #000000;
+        background-color: url('Revenge2.jpg'), no repeat center center/cover fixed;
     }
 
     .comic-section {
