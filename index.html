@@ -402,71 +402,111 @@
                     </div>
         </div>
         <style>
-            #lore {
-                background-color: #1a1a1a;
-                color: #f5f5f5;
-                font-family: 'Arial', sans-serif;
-                padding: 20px;
-                border-radius: 10px;
-                margin: 20px auto;
-                max-width: 800px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            
-            /* Lore Content */
-            .lore-content {
-                text-align: center;
-            }
-            
-            .lore-content h2 {
-                font-size: 2em;
-                margin-bottom: 20px;
-                color: #ffd700;
-            }
-            
-            /* Jedi and Dark Side sections */
-            .side-jedi, .side-dark-side {
-                margin: 20px 0;
-                padding: 15px;
-                background-color: #2e2e2e;
-                border-radius: 8px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            }
-            
-            .side-jedi h3, .side-dark-side h3 {
-                font-size: 1.5em;
-                color: #87cefa;
-                text-align: left;
-                border-bottom: 2px solid #87cefa;
-                margin-bottom: 10px;
-                padding-bottom: 5px;
-            }
-            
-            .side-jedi ul, .side-dark-side ul {
-                list-style: none;
-                padding: 0;
-            }
-            
-            .side-jedi li, .side-dark-side li {
-                text-align: left;
-                margin: 10px 0;
-                padding-left: 20px;
-                position: relative;
-            }
-            
-            .side-jedi li::before, .side-dark-side li::before {
-                content: "•";
-                color: #ffd700;
-                position: absolute;
-                left: 0;
-            }
-            
-            /* Add hover effects */
-            .side-jedi:hover, .side-dark-side:hover {
-                background-color: #383838;
-                transform: translateY(-3px);
-                transition: all 0.3s ease-in-out;
-            }
+            /* General Styles */
+#lore {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Lore Content */
+.lore-content {
+    text-align: center;
+}
+
+.lore-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+/* Jedi Section Styling */
+.side-jedi {
+    margin: 20px 0;
+    padding: 15px;
+    background: url('JEDI2.jpeg') no-repeat center center/cover fixed; /* Light blue background for Jedi */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.side-jedi h3 {
+    font-size: 1.5em;
+    color: #ffffff; /* White text for Jedi subheading */
+    text-align: left;
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.side-jedi ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-jedi li {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.side-jedi li::before {
+    content: "•";
+    color: #ffd700; /* Gold bullets */
+    position: absolute;
+    left: 0;
+}
+
+/* Dark Side Section Styling */
+.side-dark-side {
+    margin: 20px 0;
+    padding: 15px;
+    background: url('the\ dark side.jpg') no-repeat center center/cover fixed; /* Light blue background for Jedi */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.side-dark-side h3 {
+    font-size: 1.5em;
+    color: #ffffff; /* White text for Dark Side subheading */
+    text-align: left;
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.side-dark-side ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-dark-side li {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.side-dark-side li::before {
+    content: "•";
+    color: #ffd700; /* Gold bullets */
+    position: absolute;
+    left: 0;
+}
+
+/* Hover Effects */
+.side-jedi:hover, .side-dark-side:hover {
+    background-color: #fff700; /* Darken the background on hover */
+    color: black;
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+}
+
         </style>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -503,6 +543,7 @@
                     list.style.display = "none";
                 });
             });
+            
             
         </script>
     
@@ -886,7 +927,7 @@
             .movies-content {
                 display: none;
                 margin-top: 15px;
-                margin-bottom: 20px;
+                margin-bottom: 300px;
                 animation: slideDown 0.5s ease-in-out;
             }
     
@@ -994,8 +1035,8 @@
         <div class="starwars-characters">
             <h2>Characters</h2>
             <p>Discover the most popular characters from Star Wars, including Leia Organa, Darth Vader, and Han Solo.</p>
-            <button id="toggle-characters">Show More</button>
-            <div id="more-characters" class="hidden">
+    
+            <div id="more-characters">
                 <div class="characters-list">
                     <div class="character-item">
                         <div class="character-image">
@@ -1022,6 +1063,12 @@
                 <div class="button">
                     <button><a href="characters.html">View All Characters</a></button>
                 </div>
+            </div>
+
+            <div class="iconic-quotes">
+                <h2>Iconic Quotes in each characters</h2>
+
+                <h4></h4>
             </div>
         </div>
     
@@ -1146,151 +1193,193 @@
         </script>
     </section>
     <section id="Shops">
-        <link rel="script" href="server.js" type="text/javascript">
         <h2>Shop</h2>
         <p>Visit our store to purchase our favorite Star Wars-themed items.</p>
-        <div id="shop-items">
-          <div class="shop-item">
-            <h3>Coffee Table</h3>
-            <img src="Table.jpeg" alt="Coffee Table" />
-            <p>A stylish coffee table made from durable wood.</p>
-            <button>Buy Now</button>
-          </div>
-          <div class="shop-item">
-            <h3>Star Wars Mug</h3>
-            <img src="mug2.jpg" alt="Star Wars Mug" />
-            <p>A unique Star Wars-themed mug.</p>
-            <button>Buy Now</button>
-          </div>
-          <div class="shop-item">
-            <h3>Vader's Watch</h3>
-            <img src="Darth Vader watch.jpg" alt="Star Wars watch" />
-            <p>Vader's Watch</p>
-            <p>$30</p>
-            <button>Buy Now</button>
-          </div>
+        <div id="shop-items" class="scrollable-shop-items">
+            <!-- Shop Item 1: Coffee Table -->
+            <div class="shop-item">
+                <h3>Coffee Table</h3>
+                <img src="Table.jpeg" alt="Coffee Table" />
+                <p>A stylish coffee table made from durable wood.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Shop Item 2: Star Wars Mug -->
+            <div class="shop-item">
+                <h3>Star Wars Mug</h3>
+                <img src="mug2.jpg" alt="Star Wars Mug" />
+                <p>A unique Star Wars-themed mug.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Shop Item 3: Vader's Watch -->
+            <div class="shop-item">
+                <h3>Vader's Watch</h3>
+                <img src="Darth Vader watch.jpg" alt="Vader's Watch" />
+                <p>Vader's Watch</p>
+                <p>$30</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Shop Item 4: Yoda's Plush -->
+            <div class="shop-item">
+                <h3>Yoda's Plush</h3>
+                <img src="yoda.jpeg" alt="Baby Yoda Plush" />
+                <p>Baby Yoda plush</p>
+                <p>$30</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Shop Item 5: Lego Death Star -->
+            <div class="shop-item">
+                <h3>Lego Death Star</h3>
+                <img src="lego1.jpg" alt="Lego Death Star" />
+                <p>Lego Star Wars Set: The Death Star</p>
+                <p>$30</p>
+                <button>Buy Now</button>
+            </div>
         </div>
+    
+        <!-- More Items Section -->
         <div class="more-items">
-          <button>
-            <h2>More Items...</h2>
-          </button>
+            <button>
+                <h2>More Items...</h2>
+            </button>
         </div>
-      
-        <style>
-          body {
-            font-family: Arial, sans-serif;
+    </section>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #fff;
-          }
-      
-          #Shops {
-            text-align: center;
-            padding: 50px 20px;
-          }
-      
-          #Shops h2 {
+        }
+    
+        h2 {
             font-size: 36px;
-            margin-bottom: 20px;
+            text-align: center;
             color: #ffcc00;
-          }
-      
-          #shop-items {
+            margin-bottom: 20px;
+        }
+    
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #ccc;
+        }
+    
+        #shop-items {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            overflow-x: auto;
+            padding: 20px;
             gap: 20px;
-          }
-      
-          .shop-item {
+            scroll-snap-type: x mandatory; /* Enables snapping behavior */
+            background-color: #1f1f1f; /* Adding background color */
+        }
+    
+        .shop-item {
             background: #222;
             border: 2px solid #444;
-            border-radius: 8px;
-            width: 200px;
+            border-radius: 10px;
+            width: 250px;
             text-align: center;
             padding: 20px;
-            transition: transform 0.2s;
-          }
-      
-          .shop-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: start; /* Ensures each item aligns properly when scrolling */
+        }
+    
+        .shop-item:hover {
             transform: scale(1.05);
-          }
-      
-          .shop-item img {
-            max-width: 100%;
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.6);
+        }
+    
+        .shop-item img {
+            width: 100%;
+            height: auto;
             border-radius: 5px;
-          }
-      
-          .shop-item h3 {
-            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .shop-item:hover img {
+            transform: scale(1.1);
+        }
+    
+        .shop-item h3 {
+            font-size: 20px;
             color: #ffcc00;
             margin: 10px 0;
-          }
-      
-          .shop-item p {
+        }
+    
+        .shop-item p {
             font-size: 14px;
-            margin: 5px 0;
-          }
-      
-          .shop-item button {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+    
+        .shop-item button {
             padding: 10px;
             background: #ffcc00;
             color: #000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-          }
-      
-          .shop-item button:hover {
-            background: #000000;
-            
-          }
-      
-          .more-items {
-            margin-top: 20px;
-          }
-      
-          .more-items button {
-            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+    
+        .shop-item button:hover {
+            background-color: #000;
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+    
+        .more-items {
+            text-align: center;
+            margin-top: 30px;
+        }
+    
+        .more-items button {
+            padding: 15px 30px;
             background: #ffcc00;
             color: #000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-          }
-      
-          .more-items button:hover {
-            background: #000000;
-          }
-        </style>
-      
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+    
+        .more-items button:hover {
+            background: #000;
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
             const shopItemsContainer = document.getElementById("shop-items");
-      
+    
             // Fetch items from the backend
             fetch('/api/shop-items')
-              .then(response => response.json())
-              .then(data => {
-                data.forEach(item => {
-                  const itemElement = document.createElement("div");
-                  itemElement.className = "shop-item";
-                  itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <h3>${item.name}</h3>
-                    <p>${item.description}</p>
-                    <p>Price: $${item.price}</p>
-                    <button onclick="alert('Added ${item.name} to cart!')">Add to Cart</button>
-                  `;
-                  shopItemsContainer.appendChild(itemElement);
-                });
-              })
-              .catch(err => console.error("Failed to fetch shop items", err));
-          });
-        </script>
-      </section>
-
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        const itemElement = document.createElement("div");
+                        itemElement.className = "shop-item";
+                        itemElement.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}">
+                            <h3>${item.name}</h3>
+                            <p>${item.description}</p>
+                            <p>Price: $${item.price}</p>
+                            <button onclick="alert('Added ${item.name} to cart!')">Add to Cart</button>
+                        `;
+                        shopItemsContainer.appendChild(itemElement);
+                    });
+                })
+                .catch(err => console.error("Failed to fetch shop items", err));
+        });
+    </script>
       <footer>
         <p>&copy; 2024 Star Wars Fan Page | Follow us on 
             <img src="logo.png" alt="Star Wars Logo" style="width: 20px; height: 20px; vertical-align: middle;">
