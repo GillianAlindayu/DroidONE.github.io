@@ -856,10 +856,7 @@
     <section id="movies">
         <div class="movies-page">
             <h2>Movies</h2>
-            <p>Discover the iconic films and their stories, from "A New Hope" to "Revenge of the Sith."</p>
-            <button id="toggle-movies">Show More</button>
-            <div class="movies-content" id="movies-content">
-                <div class="movie-gallery">
+            <p>Discover the iconic films and their stories, from "A New Hope" to "Revenge of the Sith."</p>                <div class="movie-gallery">
                     <div class="movie-item">
                         <img src="New Hope.jpg" alt="A New Hope Poster" />
                         <p>A New Hope (Episode IV)</p>
@@ -890,7 +887,7 @@
 
                    
                 </div>
-            </div>
+    
         </div>
     
         <style>
@@ -1036,8 +1033,9 @@
             <h2>Characters</h2>
             <p>Discover the most popular characters from Star Wars, including Leia Organa, Darth Vader, and Han Solo.</p>
     
-            <div id="more-characters">
+            <div id="more-characters" class="hidden">
                 <div class="characters-list">
+                    <!-- Character: Anakin Skywalker -->
                     <div class="character-item">
                         <div class="character-image">
                             <img src="Anakin.jpg" alt="Anakin Skywalker" />
@@ -1045,6 +1043,8 @@
                         <h3>Anakin Skywalker</h3>
                         <p>Discovered as a slave on Tatooine by Qui-Gon Jinn and Obi-Wan Kenobi, Anakin Skywalker had the potential to become one of the most powerful Jedi ever.</p>
                     </div>
+    
+                    <!-- Character: Obi-Wan Kenobi -->
                     <div class="character-item">
                         <div class="character-image">
                             <img src="obiwan.jpg" alt="Obi-Wan Kenobi" />
@@ -1052,6 +1052,8 @@
                         <h3>Obi-Wan Kenobi</h3>
                         <p>A legendary Jedi Master, Obi-Wan Kenobi was a noble man and gifted in the ways of the Force.</p>
                     </div>
+    
+                    <!-- Character: Luke Skywalker -->
                     <div class="character-item">
                         <div class="character-image">
                             <img src="Luke Skywalker.jpg" alt="Luke Skywalker" />
@@ -1059,21 +1061,76 @@
                         <h3>Luke Skywalker</h3>
                         <p>Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known.</p>
                     </div>
-                </div>
-                <div class="button">
-                    <button><a href="characters.html">View All Characters</a></button>
+
+
                 </div>
             </div>
+    
+            <button id="toggle-characters">Show More</button>
 
+            <button id="morec-characters"><a href="characters.html"> More Characters</a></button>
+    
             <div class="iconic-quotes">
-                <h2>Iconic Quotes in each characters</h2>
-
-                <h4></h4>
+                <h2>Iconic Quotes</h2>
+                <div class="characters-list">
+                    <!-- Quote: Obi-Wan Kenobi -->
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="quote1.jpeg" alt="Obi-Wan Kenobi Quote" />
+                        </div>
+                        <h4>Obi-Wan Kenobi</h4>
+                        <p>"The truth is often what we make of it; you heard what you wanted to hear, believed what you wanted to believe."</p>
+                    </div>
+    
+                    <!-- Quote: Master Yoda -->
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="yoda3.jpeg" alt="Master Yoda Quote" />
+                        </div>
+                        <h4>Master Yoda</h4>
+                        <p>"Do or do not, there is no try."</p>
+                    </div>
+    
+                    <!-- Quote: Darth Vader -->
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="darth2.jpeg" alt="Darth Vader Quote" />
+                        </div>
+                        <h4>Darth Vader</h4>
+                        <p>"I am your father."</p>
+                    </div>
+    
+                    <!-- Quote: Han Solo -->
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="HansSolo.jpg" alt="Han Solo Quote" />
+                        </div>
+                        <h4>Han Solo</h4>
+                        <p>"Never tell me the odds."</p>
+                    </div>
+    
+                    <!-- Quote: Boba Fett -->
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="Boba fett.jpeg" alt="Boba Fett Quote" />
+                        </div>
+                        <h4>Boba Fett</h4>
+                        <p>"He's no good to me dead."</p>
+                    </div>
+    
+                    <!-- Quote: Darth Maul -->
+                    <div class="character-item">
+                        <div class="character-image">
+                            <img src="Maul.jpg" alt="Darth Maul Quote" />
+                        </div>
+                        <h4>Darth Maul</h4>
+                        <p>"I am the Emperor of the Galactic Senate."</p>
+                    </div>
+                </div>
             </div>
         </div>
     
         <style>
-            /* Section styling */
             #characters {
                 background: url('Characters.jpg') no-repeat center center fixed;
                 background-size: cover;
@@ -1082,20 +1139,17 @@
                 text-align: center;
             }
     
-            /* Heading styling */
             .starwars-characters h2 {
                 font-size: 2.5em;
                 margin-bottom: 10px;
                 color: #ffd700;
             }
     
-            /* Paragraph styling */
             .starwars-characters p {
                 font-size: 1.2em;
                 margin-bottom: 20px;
             }
     
-            /* Button styling */
             #toggle-characters {
                 background-color: #ffd700;
                 color: #000;
@@ -1111,7 +1165,6 @@
                 transform: scale(1.05);
             }
     
-            /* Hidden content styling with animations */
             .hidden {
                 display: none;
                 opacity: 0;
@@ -1126,7 +1179,6 @@
                 transition: opacity 0.5s ease, transform 0.5s ease;
             }
     
-            /* Horizontal scroll styling */
             .characters-list {
                 display: flex;
                 gap: 20px;
@@ -1142,7 +1194,6 @@
                 border-radius: 10px;
                 text-align: center;
                 color: #fff;
-                animation: fadeIn 1s ease;
             }
     
             .character-image img {
@@ -1151,25 +1202,13 @@
                 object-fit: cover;
             }
     
-            .character-item h3 {
+            .character-item h3, .character-item h4 {
                 font-size: 1.5em;
                 margin-bottom: 10px;
             }
     
             .character-item p {
                 font-size: 1em;
-            }
-    
-            /* Keyframe animations */
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
             }
         </style>
     
@@ -1186,12 +1225,14 @@
                     moreCharacters.classList.remove('show');
                     setTimeout(() => {
                         moreCharacters.classList.add('hidden');
-                    }, 500); // Matches the transition duration
+                    }, 500);
                     button.textContent = 'Show More';
                 }
             });
         </script>
     </section>
+    
+  
     <section id="Shops">
         <h2>Shop</h2>
         <p>Visit our store to purchase our favorite Star Wars-themed items.</p>
