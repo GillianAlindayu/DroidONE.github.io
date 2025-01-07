@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All about Star wars</title>
+    <title>Star Wars Timeline</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-left: 2px solid #fff;
+        }
+        
+        .timeline-event {
+            position: relative;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #222;
+            border-radius: 8px;
+            animation: fadeIn 1s ease;
+        }
+        
+        .timeline-event:before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: -12px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+    </style>
 </head>
 <body>
-    
+    <section id="timeline">
+        <div class="container">
+            <h2>Star Wars Stories</h2>
+            <div class="timeline"></div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineContainer = document.querySelector('.timeline');
+        
+            // Fetch timeline data
+            fetch('/api/timeline')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(event => {
+                        const eventElement = document.createElement('div');
+                        eventElement.classList.add('timeline-event');
+                        eventElement.innerHTML = `
+                            <h3>${event.era}</h3>
+                            <p><strong>${event.year}</strong>: ${event.event}</p>
+                        `;
+                        timelineContainer.appendChild(eventElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching timeline data:', error));
+        });
+        
+    </script>
+      
+
 </body>
 </html>

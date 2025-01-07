@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/sf-distant-galaxy-altoutline" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/buchanan" rel="stylesheet">
                 
 
     <style>
@@ -94,13 +95,14 @@
         }
 
         .hero p {
+            font-family: 'Buchanan', sans-serif;
             max-width: 600px;
             margin: 0 auto;
         }
 
         .hero button {
             font-size: 1.3rem; 
-            font-family: Impact, sans-serif;
+            font-family: 'Star Wars', sans-serif;
             padding: 1rem 2rem;
             border: none;
             background-color: black;
@@ -294,8 +296,10 @@
 
     <section id="home" class="hero">
 
-        <h2>"There Are No Emotion, There is Peace."</h2>      
-          <button id="sides">Start your journey</button> <!--button to navigate to next page-->
+        <h2>"There Are No Emotion, There is Peace."</h2>     
+        
+        
+        <img src="logoHero.png" alt="May the course be with ya"/>
           <div class="page-introduction">
             <h3>Welcome to Star Wars!</h3>
             <p>Discover the rich history and amazing stories of the galaxy's most iconic 
@@ -391,22 +395,51 @@
     
             <div class="side-jedi">
                 <h3>Jedi</h3>
+
+                <h4>The Jedi Order</h4>
+
+               
+                <p>A noble order of protectors unified by their ability to tap into the power of the force. 
+                    The Jedi Order were the guardians of peace and justice in the Galactic Republic.
+                     The age of the Jedi would end, however, due to a nefarious plot by the Sith Lord Darth Sidious. </p>
+
+
                 <ul>
                     <li>The Jedi Order was established by the Galactic Empire, led by Darth Vader, in 1977.</li>
                     <li>The Jedi Master was the highest rank within the Jedi Order, and they were responsible for guiding the galaxy.</li>
                     <li>The Jedi Order was divided into three branches: the Sith, the Emperor's Order, and the Dark Side.</li>
                     <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
                 </ul>
+
+          
             </div>
     
             <div class="side-dark-side">
                 <h3>Dark Side</h3>
+
+                <h4>The Sith Empire</h4>
+
+                <p>The dark side of the Force was defined as anger, fear, aggression and a lust for power. 
+                    It was stated that the Sith referred to the dark side as "dark" because it was secretive. 
+                    The Sith kept their knowledge and identities secret because they believed it would make it easier for them to impose order.
+                </p>
                 <ul>
                     <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
                     <li>The Dark Side was created by the Sith, led by Darth Sidious, in 1977.</li>
                     <li>The Dark Side was a powerful force that was used to manipulate and control the Force, but it also brought about chaos and destruction.</li>
                     <li>The Dark Side was divided into two main branches: the Force Awakens and the Rebellion.</li>
                 </ul>
+            </div>
+
+
+            <!--More stories button more information about the lore in Star wars universe. -->
+
+            <div class="more-stories">
+                <button type="button" class="View Lore">
+                    <i class="fa fa-book"></i> View More Stories
+                    <a href="stories.html">More stories</a>
+                </button>
+                
             </div>
         </div>
     
@@ -439,6 +472,8 @@
             }
     
             /* Glow Effect */
+
+            /*keyframes of glow effct */
             @keyframes glow {
                 0% {
                     text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700;
@@ -454,7 +489,7 @@
             /* Section Styling */
             .side-jedi, .side-dark-side {
                 margin: 20px 0;
-                padding: 15px;
+                padding: 20px;
                 border-radius: 8px;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
                 background-size: cover;
@@ -654,6 +689,7 @@
           }
       
           .news-article h4 {
+            font-family: 'Buchanan Laser', sans-serif;
             font-size: 1.5rem;
             color: yellow;
             margin-bottom: 10px;
@@ -936,6 +972,7 @@
             }
     
             .movies-page h2 {
+                font-family: 'Star Wars', sans-serif;
                 font-size: 2rem;
                 margin-bottom: 1rem;
                 animation: fadeIn 1s ease-in-out;
