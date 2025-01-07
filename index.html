@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarWars FanWebpage</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-distant-galaxy-altoutline" rel="stylesheet">
+                
 
     <style>
         /* General Styles */
         body {
+            
             background: url('site page.jpg') no-repeat center center/cover fixed;
             margin: 0;
             font-family: Arial, sans-serif;
@@ -17,7 +21,7 @@
         }
 
         a {
-            color: #12b4f4;
+            color: #000000;
             text-decoration: none;
         }
 
@@ -36,6 +40,7 @@
         }
 
         header h1 {
+            font-family: 'Star Wars', sans-serif;
             margin: 0;
             font-size: 2rem;
         }
@@ -210,6 +215,10 @@
                 font-size: 1rem;
             }
         }
+
+        @import url('https://fonts.cdnfonts.com/css/star-wars');
+
+        @import url('https://fonts.cdnfonts.com/css/sf-distant-galaxy-altoutline');
     </style>
 </head>
 <body>
@@ -223,7 +232,7 @@
                 <a href="#news">News & Updates</a>
                 <a href="#movies">Movies</a>
                 <a href="#characters">Characters</a>
-                <a href="#Shop">Shop</a>
+                <a href="#shop">Shop</a>
             </div>
         </nav>
         <style>
@@ -237,6 +246,7 @@
             }
             
             body {
+                font-family: 'Star Wars', sans-serif;
                 padding-top: 80px; /* Adjust based on header height */
                 flex-direction: flex; ;
             }
@@ -309,7 +319,7 @@
         
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: 'SF Distant Galaxy', sans-serif;
                 background-color: #f4f4f4;
                 margin: 0;
                 padding: 20px;
@@ -331,6 +341,7 @@
             }
             
             .about-header h2 {
+                font-family: 'star wars', sans-serif;
                 margin: 0;
             }
             
@@ -376,181 +387,193 @@
     <section id="lore">
         <div class="lore-content">
             <h2>Our Lore</h2>
-            <p>Star Wars lore is a complex and diverse tapestry of stories, each telling a different story about the Star Wars universe. The lore has been told through various media, 
-                including books, films, comic books, and video games. 
-                Below are some key points about the Star Wars lore:</p>
+            <p>Star Wars lore is a complex and diverse tapestry of stories, each telling a different story about the Star Wars universe. The lore has been told through various media, including books, films, comic books, and video games. Below are some key points about the Star Wars lore:</p>
     
-                <div class="side-jedi">
-                    <h3>Jedi</h3>
+            <div class="side-jedi">
+                <h3>Jedi</h3>
+                <ul>
+                    <li>The Jedi Order was established by the Galactic Empire, led by Darth Vader, in 1977.</li>
+                    <li>The Jedi Master was the highest rank within the Jedi Order, and they were responsible for guiding the galaxy.</li>
+                    <li>The Jedi Order was divided into three branches: the Sith, the Emperor's Order, and the Dark Side.</li>
+                    <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
+                </ul>
+            </div>
     
-                    <ul>
-                        <li>The Jedi Order was established by the Galactic Empire, led by Darth Vader, in 1977.</li>
-                        <li>The Jedi Master was the highest rank within the Jedi Order, and they were responsible for guiding the galaxy.</li>
-                        <li>The Jedi Order was divided into three branches: the Sith, the Emperor's Order, and the Dark Side.</li>
-                        <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
-                    </ul>
-    
-                </div>
-                <div class="side-dark-side">
-                    <h3>Dark Side </h3>
-                    <ul>
-                        <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
-                        <li>The Dark Side was created by the Sith, led by Darth Sidious, in 1977.</li>
-                        <li>The Dark Side was a powerful force that was used to manipulate and control the Force, but it also brought about chaos and destruction.</li>
-                        <li>The Dark Side was divided into two main branches: the Force Awakens and the Rebellion.</li>
-                    </ul>
-                    </div>
+            <div class="side-dark-side">
+                <h3>Dark Side</h3>
+                <ul>
+                    <li>The Dark Side was a force that sought to control the Force and maintain balance within the galaxy.</li>
+                    <li>The Dark Side was created by the Sith, led by Darth Sidious, in 1977.</li>
+                    <li>The Dark Side was a powerful force that was used to manipulate and control the Force, but it also brought about chaos and destruction.</li>
+                    <li>The Dark Side was divided into two main branches: the Force Awakens and the Rebellion.</li>
+                </ul>
+            </div>
         </div>
+    
         <style>
             /* General Styles */
-#lore {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+            #lore {
+                
+                background-color: #1a1a1a;
+                color: #f5f5f5;
+                font-family: 'Arial', sans-serif;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px auto;
+                max-width: 3000px;
+                max-height: 1000px; 
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+    
+            .lore-content {
+                text-align: center;
+            }
+    
+            .lore-content h2 {
+                font-family: 'Star Wars', sans-serif;
+                text-align: center; 
+                font-size: 2em;
+                margin-bottom: 20px;
+                color: #ffd700;
+                animation: glow 1.5s infinite;
+            }
+    
+            /* Glow Effect */
+            @keyframes glow {
+                0% {
+                    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700;
+                }
+                50% {
+                    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+                }
+                100% {
+                    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700;
+                }
+            }
+    
+            /* Section Styling */
+            .side-jedi, .side-dark-side {
+                margin: 20px 0;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .side-jedi {
+                background: url('JEDI2.jpeg') no-repeat center/cover fixed;
+            }
+    
+            .side-dark-side {
+                background: url('the dark side.jpg') no-repeat center/cover fixed;
+            }
+    
+            .side-jedi h3, .side-dark-side h3 {
+                font-family: 'Star Wars', sans-serif;   
+                font-size: 1.5em;
+                color: #ffffff;
+                text-align: left;
+                border-bottom: 2px solid #ffffff;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+            }
+    
+            .side-jedi ul, .side-dark-side ul {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .side-jedi li, .side-dark-side li {
+                text-align: left;
+                margin: 10px 0;
+                padding-left: 20px;
+                position: relative;
+                opacity: 0;
+                transform: translateY(10px);
+                animation: fadeInUp 0.5s forwards;
+            }
+    
+            .side-jedi li::before, .side-dark-side li::before {
+                content: "•";
+                color: #ffd700;
+                position: absolute;
+                left: 0;
+            }
+    
+            /* Hover Effects */
+            .side-jedi:hover, .side-dark-side:hover {
+                transform: translateY(-3px);
+                transition: transform 0.3s ease-in-out;
+            }
+    
+            /* Animations */
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            button {
+                font-family: 'Star Wars', sans-serif;
+                display: inline-block;
+                margin-top: 10px;
+                cursor: pointer;
+                background-color: #444;
+                color: #fff;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+    
+            button:hover {
+                background-color: #666;
+            }
+    
+            ul.collapsed {
+                display: none;
+            }
 
-/* Lore Content */
-.lore-content {
-    text-align: center;
-}
-
-.lore-content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ffd700;
-}
-
-/* Jedi Section Styling */
-.side-jedi {
-    margin: 20px 0;
-    padding: 15px;
-    background: url('JEDI2.jpeg') no-repeat center center/cover fixed; /* Light blue background for Jedi */
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.side-jedi h3 {
-    font-size: 1.5em;
-    color: #ffffff; /* White text for Jedi subheading */
-    text-align: left;
-    border-bottom: 2px solid #ffffff;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-}
-
-.side-jedi ul {
-    list-style: none;
-    padding: 0;
-}
-
-.side-jedi li {
-    text-align: left;
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-}
-
-.side-jedi li::before {
-    content: "•";
-    color: #ffd700; /* Gold bullets */
-    position: absolute;
-    left: 0;
-}
-
-/* Dark Side Section Styling */
-.side-dark-side {
-    margin: 20px 0;
-    padding: 15px;
-    background: url('the\ dark side.jpg') no-repeat center center/cover fixed; /* Light blue background for Jedi */
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.side-dark-side h3 {
-    font-size: 1.5em;
-    color: #ffffff; /* White text for Dark Side subheading */
-    text-align: left;
-    border-bottom: 2px solid #ffffff;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-}
-
-.side-dark-side ul {
-    list-style: none;
-    padding: 0;
-}
-
-.side-dark-side li {
-    text-align: left;
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-}
-
-.side-dark-side li::before {
-    content: "•";
-    color: #ffd700; /* Gold bullets */
-    position: absolute;
-    left: 0;
-}
-
-/* Hover Effects */
-.side-jedi:hover, .side-dark-side:hover {
-    background-color: #fff700; /* Darken the background on hover */
-    color: black;
-    transform: translateY(-3px);
-    transition: all 0.3s ease-in-out;
-}
+            @import url('https://fonts.cdnfonts.com/css/star-wars');
 
         </style>
+    
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Select all sections with class "side-jedi" and "side-dark-side"
                 const sections = document.querySelectorAll(".side-jedi, .side-dark-side");
-            
+    
                 sections.forEach(section => {
-                    // Add a button for toggling visibility
                     const toggleButton = document.createElement("button");
                     toggleButton.textContent = "Expand";
-                    toggleButton.style.marginTop = "10px";
-                    toggleButton.style.cursor = "pointer";
-                    toggleButton.style.backgroundColor = "#444";
-                    toggleButton.style.color = "#fff";
-                    toggleButton.style.border = "none";
-                    toggleButton.style.padding = "5px 10px";
-                    toggleButton.style.borderRadius = "5px";
-                    
-                    section.appendChild(toggleButton);
-            
-                    // Add click event for toggling content visibility
+                    section.appendChild(toggleButton);  
+    
                     const list = section.querySelector("ul");
+                    list.classList.add("collapsed");
+    
                     toggleButton.addEventListener("click", function () {
-                        if (list.style.display === "none" || !list.style.display) {
-                            list.style.display = "block";
+                        if (list.classList.contains("collapsed")) {
+                            list.classList.remove("collapsed");
                             toggleButton.textContent = "Collapse";
                         } else {
-                            list.style.display = "none";
+                            list.classList.add("collapsed");
                             toggleButton.textContent = "Expand";
                         }
                     });
-            
-                    // Start with content collapsed
-                    list.style.display = "none";
                 });
             });
-            
-            
         </script>
+    </section>
+    
+    
     
     </section>
     <section id="news">
         <div class="news-page">
-          <h3 class="news-title">Star Wars News and Updates</h3>
+          <h3 class="news-title"> News and Updates</h3>
           <div class="news-container">
             <!-- Static news articles -->
             <div class="news-article">
@@ -587,6 +610,7 @@
           }
       
           .news-title {
+            font-family: 'Star Wars', sans-serif;
             text-align: center;
             font-size: 2rem;
             margin-bottom: 20px;
@@ -748,6 +772,7 @@
 
     .comic-section h2,
     .comic-title {
+        font-family: 'Star Wars', sans-serif; 
         font-size: 24px;
         color: #ffffff;
         text-align: center;
@@ -790,7 +815,7 @@
     .comic-title {
         font-size: 18px;
         margin: 10px 0;
-        color: #ffffff;
+        color: #000000;
     }
 
     .toggle {
@@ -1140,6 +1165,7 @@
             }
     
             .starwars-characters h2 {
+                font-family: 'Star Wars', sans-serif; 
                 font-size: 2.5em;
                 margin-bottom: 10px;
                 color: #ffd700;
@@ -1203,6 +1229,7 @@
             }
     
             .character-item h3, .character-item h4 {
+                font-family: 'Star Wars', sans-serif; 
                 font-size: 1.5em;
                 margin-bottom: 10px;
             }
