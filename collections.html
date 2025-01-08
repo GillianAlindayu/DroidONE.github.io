@@ -10,6 +10,7 @@
     <style>
         /* Global Styles */
         body {
+            background: url('background2.jpg'), no-repeat center center fixed; 
             font-family: 'Star Wars', sans-serif;
             background-color: #000000;
             margin: 0;
@@ -150,6 +151,9 @@
         <!-- Load more series button -->
 
         <!-- Logo -->
+
+     
+
       
     </section>
     <section id="series2">
@@ -255,17 +259,188 @@
         </script>
         
     </section>
+    <section id="more-collection">
+        <h2 class="glow">Other Series</h2>
+        <div class="more-movies" id="movies-container">
+            <!-- Dynamic movie content -->
+        </div>
+    </section>
+
     <section class="series3">
         <div class="section3">
+            <h4>Other Sequels Throughout the Series</h4>
+            <div class="series-collection3">
+                <div class="series-item">
+                    <img src="visions.jpeg" alt="Star Wars: Visions">
+                    <h4>Star Wars: Visions</h4>
+                    <p>This anthology of animated shorts celebrates the Star Wars mythos.</p>
+                </div>
+                <div class="series-item">
+                    <img src="resistance.jpeg" alt="Star Wars: Resistance">
+                    <h4>Star Wars: Resistance</h4>
+                    <p>Follow young pilot Kaz as he spies on the First Order.</p>
+                </div>
+                <div class="series-item">
+                    <img src="rebel2.jpeg" alt="Star Wars: Rebels">
+                    <h4>Star Wars: Rebels</h4>
+                    <p>Set before A New Hope, Rebels explores the start of the Rebellion.</p>
+                </div>
+            </div>
+        </div>
+        <style>
+                 /* Global Styles */
+        body {
+            background: url('background2.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            font-family: 'Star Wars', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
 
-            <h4>Other Sequels throughout the series.</h4>
-            <div class="series-item">
-                <img src="bobafett2.jpeg" alt="Boba Fett" />
-                <h4>The Book of Boba Fett</h4>
-                <p>The Book of Boba Fett finds legendary bounty hunter Boba Fett and mercenary Fennec Shand navigating the galaxy’s underworld when they return to the sands of Tatooine to stake their claim on the territory once ruled by Jabba the Hutt and his crime syndicate.</p>
-            </div>
-            </div>
-      </section>
+        /* Glow effect for section heading */
+        h2.glow {
+            text-align: center;
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: #000000;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            margin-bottom: 40px;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0000, 0 0 20px #00a6ff, 0 0 25px #ff00ea, 0 0 30px #00ff3c;
+            }
+            100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffd000, 0 0 40px #ffe100, 0 0 50px #fff200, 0 0 60px #ffa600;
+            }
+        }
+
+        /* Main container for the movie/series collection */
+        #more-collection {
+            padding: 40px 20px;
+        }
+
+        .more-movies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Individual movie/series item styling */
+        .movie-item-list {
+            background-color: #222222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .movie-item-list img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-item-list h4 {
+            font-family: 'Star Wars', sans-serif;
+            font-size: 2rem;
+            color: #fff200;
+            margin: 0;
+        }
+
+        .movie-item-list p {
+            font-family: 'Buchanan', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Hover effects */
+        .movie-item-list:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-item-list:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Section 3 Styling */
+        .series3 {
+            padding: 40px 20px;
+            background-color: #111111;
+        }
+
+        .series3 h4 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #fff200;
+            margin-bottom: 30px;
+        }
+
+        .series-collection3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .series-collection3 .series-item {
+            background-color: #222222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .series-collection3 .series-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .series-collection3 .series-item h4 {
+            font-family: 'Star Wars', sans-serif;
+            font-size: 1.5rem;
+            color: #fff200;
+            margin: 0;
+        }
+
+        .series-collection3 .series-item p {
+            font-family: 'Buchanan', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .series-collection3 .series-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .series-collection3 .series-item:hover img {
+            transform: scale(1.1);
+        }
+        </style>
+    </section>
+    
+   
+   
     
 
     <a href="index.html"><img src="logo2-removebg-preview.png" alt="Star Wars Logo" /></a>

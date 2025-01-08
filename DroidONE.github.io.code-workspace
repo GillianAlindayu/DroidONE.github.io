@@ -2,7 +2,13 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../../../../Desktop/Characters file"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "DroidONE.github.io"
+	}
 }

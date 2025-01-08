@@ -72,6 +72,47 @@
             <div class="timeline"></div>
         </div>
     </section>
+    <section id="light-saber">
+        <div class="container">
+            <div class="lightsaber">
+                <div class="lightsaber__light"></div>
+                <div class="lightsaber__button"></div>
+            </div>
+            <div class="lightsaber2">
+                <div class="lightsaber2__light"></div>
+                <div class="lightsaber__button"></div>
+            </div>
+        </div>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                height: 100vh; 
+                background-color: #111111; 
+            }
+
+            .container{
+                width: 200px; 
+                display: flex; 
+                align-items: center; 
+                justify-content: space-between; 
+            }
+
+            .lightsaber{
+                width: 17px; 
+                height: 100px; 
+                border-radius: 30px; 
+                background-color: #000; 
+                box-shadow: 0px, 0px, 1px, 0.3px
+            }
+        </style>
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
