@@ -299,7 +299,7 @@
         <h2>"There Are No Emotion, There is Peace."</h2>     
         
         
-        <img src="logoHero.png" alt="May the course be with ya"/>
+        <img src="logoHero.png" alt="May the course be with ya"/>   
           <div class="page-introduction">
             <h3>Welcome to Star Wars!</h3>
             <p>Discover the rich history and amazing stories of the galaxy's most iconic 
@@ -1123,20 +1123,16 @@
                         <h3>Luke Skywalker</h3>
                         <p>Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known.</p>
                     </div>
-
-
                 </div>
             </div>
     
             <button id="toggle-characters">Show More</button>
-
-            <button id="morec-characters"><a href="characters.html"> More Characters</a></button>
     
             <div class="iconic-quotes">
                 <h2>Iconic Quotes</h2>
-                <div class="characters-list">
+                <div class="characters-list" id="quotes-list">
                     <!-- Quote: Obi-Wan Kenobi -->
-                    <div class="character-item">
+                    <div class="character-item quote">
                         <div class="character-image">
                             <img src="quote1.jpeg" alt="Obi-Wan Kenobi Quote" />
                         </div>
@@ -1144,8 +1140,8 @@
                         <p>"The truth is often what we make of it; you heard what you wanted to hear, believed what you wanted to believe."</p>
                     </div>
     
-                    <!-- Quote: Master Yoda -->
-                    <div class="character-item">
+                    <!-- Additional quotes -->
+                    <div class="character-item quote">
                         <div class="character-image">
                             <img src="yoda3.jpeg" alt="Master Yoda Quote" />
                         </div>
@@ -1153,43 +1149,17 @@
                         <p>"Do or do not, there is no try."</p>
                     </div>
     
-                    <!-- Quote: Darth Vader -->
-                    <div class="character-item">
+                    <div class="character-item quote">
                         <div class="character-image">
                             <img src="darth2.jpeg" alt="Darth Vader Quote" />
                         </div>
                         <h4>Darth Vader</h4>
                         <p>"I am your father."</p>
                     </div>
-    
-                    <!-- Quote: Han Solo -->
-                    <div class="character-item">
-                        <div class="character-image">
-                            <img src="HansSolo.jpg" alt="Han Solo Quote" />
-                        </div>
-                        <h4>Han Solo</h4>
-                        <p>"Never tell me the odds."</p>
-                    </div>
-    
-                    <!-- Quote: Boba Fett -->
-                    <div class="character-item">
-                        <div class="character-image">
-                            <img src="Boba fett.jpeg" alt="Boba Fett Quote" />
-                        </div>
-                        <h4>Boba Fett</h4>
-                        <p>"He's no good to me dead."</p>
-                    </div>
-    
-                    <!-- Quote: Darth Maul -->
-                    <div class="character-item">
-                        <div class="character-image">
-                            <img src="Maul.jpg" alt="Darth Maul Quote" />
-                        </div>
-                        <h4>Darth Maul</h4>
-                        <p>"I am the Emperor of the Galactic Senate."</p>
-                    </div>
                 </div>
             </div>
+    
+            <button id="morec-characters"><a href="characters.html">View all characters</a></button>
         </div>
     
         <style>
@@ -1197,20 +1167,21 @@
                 background: url('Characters.jpg') no-repeat center center fixed;
                 background-size: cover;
                 color: #fff;
-                padding: 20px;
+                padding: 40px 20px;
                 text-align: center;
             }
     
             .starwars-characters h2 {
-                font-family: 'Star Wars', sans-serif; 
+                font-family: 'Star Wars', sans-serif;
                 font-size: 2.5em;
                 margin-bottom: 10px;
                 color: #ffd700;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             }
     
             .starwars-characters p {
                 font-size: 1.2em;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
             }
     
             #toggle-characters {
@@ -1230,33 +1201,28 @@
     
             .hidden {
                 display: none;
-                opacity: 0;
-                transform: translateY(-20px);
-                transition: opacity 0.5s ease, transform 0.5s ease;
-            }
-    
-            .show {
-                display: block;
-                opacity: 1;
-                transform: translateY(0);
-                transition: opacity 0.5s ease, transform 0.5s ease;
             }
     
             .characters-list {
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 20px;
-                overflow-x: auto;
-                padding: 10px 0;
-                scroll-behavior: smooth;
+                margin-top: 20px;
             }
     
             .character-item {
-                min-width: 250px;
                 background: rgba(0, 0, 0, 0.8);
                 padding: 15px;
                 border-radius: 10px;
                 text-align: center;
                 color: #fff;
+                opacity: 0;
+                transform: scale(1.95);
+                animation: fadeIn 0.5s ease forwards;
+            }
+    
+            .character-item.quote {
+                background: rgba(0, 0, 0, 0.9);
             }
     
             .character-image img {
@@ -1265,14 +1231,38 @@
                 object-fit: cover;
             }
     
-            .character-item h3, .character-item h4 {
-                font-family: 'Star Wars', sans-serif; 
+            .character-item h3,
+            .character-item h4 {
+                font-family: 'Star Wars', sans-serif;
                 font-size: 1.5em;
                 margin-bottom: 10px;
             }
     
             .character-item p {
                 font-size: 1em;
+            }
+    
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .characters-list {
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+            }
+    
+            #morec-characters a {
+                color: #ffd700;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            #morec-characters a:hover {
+                text-decoration: underline;
             }
         </style>
     
@@ -1283,18 +1273,18 @@
     
                 if (moreCharacters.classList.contains('hidden')) {
                     moreCharacters.classList.remove('hidden');
-                    moreCharacters.classList.add('show');
                     button.textContent = 'Show Less';
                 } else {
-                    moreCharacters.classList.remove('show');
-                    setTimeout(() => {
-                        moreCharacters.classList.add('hidden');
-                    }, 500);
+                    moreCharacters.classList.add('hidden');
                     button.textContent = 'Show More';
                 }
             });
         </script>
     </section>
+    
+    
+
+    
     
   
     <section id="Shops">
@@ -1485,48 +1475,90 @@
                 .catch(err => console.error("Failed to fetch shop items", err));
         });
     </script>
-      <footer>
-        <p>&copy; 2024 Star Wars Fan Page | Follow us on 
-            <img src="logo.png" alt="Star Wars Logo" style="width: 20px; height: 20px; vertical-align: middle;">
-            <a href="#">Twitter</a> |
-            <a href="#">Instagram</a> |
-            <a href="#">Facebook</a>
-        </p>
-        <style>
-            footer {
-                background: url('footerbg.jpg') no-repeat center center ;
-                background-size: cover;
-                color: #fff;
-                padding: 200px;
-                text-align: center;
-                margin-bottom: 200px;
-                overflow: hidden;
-            }
-    
-            footer p {
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                margin: 0;
-            }
-    
-            footer a {
-                color: #ffd700; /* Gold color for links */
-                text-decoration: none;
-                margin: 0 5px;
-            }
-    
-            footer a:hover {
-                text-decoration: underline;
-            }
-        </style>
-      
-        <!--Put script-->   
-            <script>
-                const yearSpan = document.getElementById('year');
-                yearSpan.textContent = new Date().getFullYear();
-
-        </script>
+    <footer>
+        <div class="footer-container">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <p>&copy; <span id="year">2024</span> Star Wars Fan Page | Follow us on 
+                    <img src="logo.png" alt="Star Wars Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+                    <a href="#">Twitter</a> |
+                    <a href="#">Instagram</a> |
+                    <a href="#">Facebook</a>
+                </p>
+            </div>
+        </div>
     </footer>
+    
+    <style>
+        footer {
+            position: relative;
+            background: url('footerbg.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+    
+        .footer-container {
+            position: relative;
+            z-index: 1;
+        }
+    
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            animation: colorShift 10s infinite;
+            z-index: 0;
+        }
+    
+        footer p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.5;
+            z-index: 2;
+            position: relative;
+        }
+    
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+    
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    
+        @keyframes colorShift {
+            0% {
+                background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            }
+            50% {
+                background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+            }
+            100% {
+                background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            }
+        }
+    </style>
+    
+    <script>
+        // Update the year dynamically
+        const yearSpan = document.getElementById('year');
+        yearSpan.textContent = new Date().getFullYear();
+    </script>
+    
+   
+
     
       
       
