@@ -48,6 +48,7 @@
 
         /* Navigation */
         nav {
+            
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -301,7 +302,6 @@
         
         <img src="logoHero.png" alt="May the course be with ya"/>   
           <div class="page-introduction">
-            <h3>Welcome to Star Wars!</h3>
             <p>Discover the rich history and amazing stories of the galaxy's most iconic 
                 films and TV shows. Explore the characters, their backstories, and the events that shaped the galaxy.</p>
   
@@ -787,7 +787,7 @@
                 </div>
             </div>
             <button class="more-comics">
-                
+                <a href="ComicsPage.html">Read More.</a>
             </button>
         </div>
     </div>
@@ -1114,7 +1114,7 @@
                     <!-- Character: Obi-Wan Kenobi -->
                     <div class="character-item">
                         <div class="character-image">
-                            <img src="obiwan.jpg" alt="Obi-Wan Kenobi" />
+                            <img src="Obiwanart2.jpg" alt="Obi-Wan Kenobi" />
                         </div>
                         <h3>Obi-Wan Kenobi</h3>
                         <p>A legendary Jedi Master, Obi-Wan Kenobi was a noble man and gifted in the ways of the Force.</p>
@@ -1156,10 +1156,10 @@
     
                     <div class="character-item quote">
                         <div class="character-image">
-                            <img src="darth2.jpeg" alt="Darth Vader Quote" />
+                            <img src="Darth Vader.jpg" alt="Darth Vader Quote" />
                         </div>
                         <h4>Darth Vader</h4>
-                        <p>"I am your father."</p>
+                        <p>“Be careful not to choke on your aspirations.”</p>
                     </div>
                 </div>
             </div>
@@ -1486,8 +1486,11 @@
         <div class="footer-container">
             <div class="background-overlay"></div>
             <div class="content">
-                <p>&copy; <span id="year">2024</span> Star Wars Fan Page | Follow us on 
-                    <img src="logo.png" alt="Star Wars Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+                <p>&copy; <span id="year">2024</span> Star Wars Fan Page | Follow us on:
+                    <a href="index.html">
+                        <img src="logo2-removebg-preview.png" alt="Star Wars Logo" />
+                    </a>
+                    <a href="#">LinkedIn</a> |
                     <a href="#">Twitter</a> |
                     <a href="#">Instagram</a> |
                     <a href="#">Facebook</a>
@@ -1496,81 +1499,10 @@
         </div>
     </footer>
     
-    <style>
-        footer {
-            position: relative;
-            background: url('footerbg.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 50px 20px;
-            text-align: center;
-            margin-top: 50px;
-            overflow: hidden;
-        }
-    
-        .footer-container {
-            position: relative;
-            z-index: 1;
-        }
-    
-        .background-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-            animation: colorShift 10s infinite;
-            z-index: 0;
-        }
-    
-        footer p {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            margin: 0;
-            line-height: 1.5;
-            z-index: 2;
-            position: relative;
-        }
-    
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-            margin: 0 5px;
-            transition: color 0.3s ease;
-        }
-    
-        footer a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-    
-        @keyframes colorShift {
-            0% {
-                background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-            }
-            50% {
-                background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-            }
-            100% {
-                background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-            }
-        }
-    </style>
-    
     <script>
         // Update the year dynamically
-        const yearSpan = document.getElementById('year');
-        yearSpan.textContent = new Date().getFullYear();
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    
-   
-
-    
-      
-      
-
-  
 
 
     <script>
