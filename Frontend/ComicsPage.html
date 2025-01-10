@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comics Page</title>
+    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/buchanan" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            background: url('comicpage.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Star Wars', sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            position: relative;
+        }
+
+        /* Glow effect for section heading */
+        h2.glow {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-size: 3rem;
+            color: #000;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0000, 0 0 20px #00a6ff, 0 0 25px #ff00ea, 0 0 30px #00ff3c;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffd000, 0 0 40px #ffe100, 0 0 50px #fff200, 0 0 60px #ffa600;
+            }
+        }
+
+        /* Styling for header text */
+        h3 {
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Buchanan', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            z-index: 10;
+            margin: 10px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            width: auto;
+        }
+
+        /* Main container for the comic collection */
+        #more-collection,
+        .series-section {
+            padding: 40px 20px;
+            background-color: #111;
+            padding-top: 60px; /* To accommodate fixed h3 */
+        }
+
+        .more-movies,
+        .series-collection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Individual item styling */
+        .movie-item-list,
+        .series-item {
+            background-color: #222; opacity: initial;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .movie-item-list img,
+        .series-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-item-list h4,
+        .series-item h4 {
+            font-family: 'Star Wars', sans-serif;
+            font-size: 2rem;
+            color: #fff200;
+            margin: 0;
+        }
+
+        .movie-item-list p,
+        .series-item p {
+            font-family: 'Buchanan', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Section title styling */
+        .section-title h4 {
+            font-family: 'Star Wars', sans-serif;
+            font-size: 2rem;
+            color: rgb(255, 234, 0);
+            margin: 0;
+        }
+
+        /* Hover effects */
+        .movie-item-list:hover,
+        .series-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-item-list:hover img,
+        .series-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Button for loading more content */
+        #loadMore {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff0080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #loadMore:hover {
+            background-color: #ff3366;
+        }
+
+        /* Logo styling */
+        a img {
+            display: block;
+            margin: 40px auto;
+            width: 150px;
+            height: auto;
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .movie-item-list,
+            .series-item {
+                width: 150px;
+            }
+
+            h2.glow {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Section: Other Comics Collection -->
+    <section id="more-collection">
+        <h2 class="glow">Other Comics Collection</h2>
+        <h3>Comic books in each timeline.</h3>
+
+        <div class="more-movies" id="movies-container">
+            <!-- Movie items dynamically added here -->
+             <h4>High Republic Saga</h4>
+            <div class="movie-item-list">
+
+                <img src="highrepublic1.jpeg" alt="High Republic" />
+                <h4>High Republic</h4>
+                <p>The golden age of the Jedi, faced numerous challenges across the galaxy</p>
+            </div>
+
+            <div class="movie-item-list">
+                <img src="Quest.jpg" alt="Quest of the Hidden City" />
+                <h4>Quest of the Hidden City</h4>
+                <p>A thrilling tale of exploration and danger in the High Republic era.</p>
+            </div>
+
+            <div class="movie-item-list">
+                <img src="blade1.jpg" alt="Blade #1" />
+                <h4>Blade #1</h4>
+                <p>Discover the story of Jedi Knight Porter Engle in this action-packed series.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Fall of The Jedi -->
+    <section class="series-section">
+        <h4>Fall Of The Jedi</h4>
+
+        <div class="series-collection">
+            <div class="series-item">
+                <img src="YodaComic.jpeg" alt="Yoda series" />
+                <h4>Yoda Series</h4>
+                <p>Explore the wisdom and struggles of Jedi Master Yoda in this captivating comic series.</p>
+            </div>
+
+            <div class="series-item">
+                <img src="obiwanseries.jpg" alt="Padawan series" />
+                <h4>Padawan Series</h4>
+                <p>A young Obi-Wan Kenobi learns the ways of the Force in this prequel story.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Reign of the Empire -->
+    <section class="series-section">
+        <h4>Reign Of The Empire</h4>
+
+        <div class="series-collection">
+            <div class="series-item">
+                <img src="DarkLord1.jpeg" alt="Darth Vader: Dark Lord of the Sith" />
+                <h4>Darth Vader: Dark Lord of the Sith</h4>
+                <p>Follow Darth Vader's journey as he embraces the dark side.</p>
+            </div>
+
+            <div class="series-item">
+                <img src="RiseRedBlade.jpeg" alt="Star Wars: Resistance" />
+                <h4>Inquisitor: Rise of the Red Blade</h4>
+                <p>The rise of the Inquisitor Iskat Akaris amidst the fall of the Jedi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo -->
+    <a href="index.html"><img src="logo2-removebg-preview.png" alt="Star Wars Logo" /></a>
+
+    <script>
+        // Example function for loading movies (uncomment and modify if you have an API)
+        async function loadMovies() {
+            try {
+                const response = await fetch('/api/movies');
+                const movies = await response.json();
+
+                const movieContainer = document.getElementById("movies-container");
+
+                movies.forEach(movie => {
+                    const movieItem = document.createElement("div");
+                    movieItem.classList.add("movie-item-list");
+
+                    movieItem.innerHTML = `
+                        <img src="${movie.imageUrl}" alt="${movie.title}" />
+                        <h4>${movie.title}</h4>
+                        <p>${movie.description}</p>
+                    `;
+
+                    movieContainer.appendChild(movieItem);
+                });
+            } catch (error) {
+                console.error("Error fetching movie data:", error);
+            }
+        }
+
+        // Load movies initially
+        loadMovies();
+
+        // Load more movies when the button is clicked
+        document.getElementById("loadMore")?.addEventListener("click", function () {
+            loadMovies();
+        });
+    </script>
+
+</body>
+
+</html>
